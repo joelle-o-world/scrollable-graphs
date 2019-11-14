@@ -4,7 +4,7 @@ const sq = (x: number) => x*x
 
 /** A graph representing a time series at a fixed interval. 
  * Automatically produces larger scale graphs using RMS. */
-export class SignalGraph {
+class SignalGraph {
   data: number[] | Float32Array;
   interval: number;
   scale: (y: number) => any;
@@ -116,3 +116,4 @@ export class SignalGraph {
   }
 }
 
+export {SignalGraph}

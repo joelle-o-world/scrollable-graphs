@@ -9,7 +9,7 @@ type Graph = (MarkerGraph | SignalGraph | CoordinateGraph | PolygonGraph)
 /** Class for rendering multiple graphs on a canvas element. 
  * Allowing the user to zoom and pan with the mouse wheel.
  */
-export class TrackView {
+class TrackView {
   canvas: HTMLCanvasElement|Canvas;
   ctx: CanvasRenderingContext2D | null;
   lockedToPlayhead: boolean;
@@ -177,3 +177,4 @@ export class TrackView {
       this.t1 = this.tMax
   }
 }
+export {TrackView}

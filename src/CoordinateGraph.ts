@@ -3,7 +3,7 @@ import {TrackView} from "./TrackView";
 type Coordinate = {x:number, y:number}
 
 /** Graph for representing a series of <time, y-value> pairs. */
-export class CoordinateGraph {
+class CoordinateGraph {
   points: Coordinate[];
   mode: 'bar';
   barWidth: number;
@@ -79,3 +79,5 @@ export class CoordinateGraph {
     return this.scale
   }
 }
+
+export {CoordinateGraph}

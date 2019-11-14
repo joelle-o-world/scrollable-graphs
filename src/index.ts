@@ -1,8 +1,8 @@
-export * from './colorTransform';
-export * from './CoordinateGraph';
+export {hslToRgb, rgbToHsl} from './colorTransform';
+export {CoordinateGraph} from './CoordinateGraph';
 export * from './graphical-definitions';
-export * from './InteractiveTrackView';
-export * from './MarkerGraph';
-export * from './PolygonGraph';
+export {InteractiveTrackView} from './InteractiveTrackView';
+export {MarkerGraph} from './MarkerGraph';
+export {PolygonGraph} from './PolygonGraph';
 export {SignalGraph} from './SignalGraph';
-export * from './TrackView';
+export {TrackView} from './TrackView';

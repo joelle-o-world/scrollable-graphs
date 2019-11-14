@@ -1,6 +1,6 @@
 import {TrackView} from "./TrackView";
 
-export class InteractiveTrackView extends TrackView {
+class InteractiveTrackView extends TrackView {
   canvas: HTMLCanvasElement;
 
   constructor(canvas:HTMLCanvasElement = document.createElement('canvas')) {
@@ -33,3 +33,5 @@ export class InteractiveTrackView extends TrackView {
     })
   }
 }
+
+export {InteractiveTrackView}

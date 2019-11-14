@@ -3,7 +3,7 @@ import {TrackView} from "./TrackView";
 /**
  * Graph for representing a series of instantanteous time points.
  */
-export class MarkerGraph {
+class MarkerGraph {
   points: number[];
   y: number;
   height: number;
@@ -45,3 +45,4 @@ export class MarkerGraph {
   }
 }
 
+export {MarkerGraph}

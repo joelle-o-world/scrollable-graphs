@@ -4,7 +4,7 @@ import * as Color from 'color';
 import { rgbToHsl, hslToRgb } from "./colorTransform";
 import { Polygon } from "./graphical-definitions";
 
-export class PolygonGraph {
+class PolygonGraph {
   polygons: Polygon[];
   scale: (y: number) => number;
   y: number;
@@ -159,3 +159,5 @@ const defaultColorTransform = (color:string) => {
 
   return 'rgb(' + hslToRgb(h,s,l).join(',') + ')'
 }
+
+export {PolygonGraph}
