@@ -1,10 +1,10 @@
-import TrackView from "./TrackView";
+import {TrackView} from "./TrackView";
 
 import * as Color from 'color';
 import { rgbToHsl, hslToRgb } from "./colorTransform";
 import { Polygon } from "./graphical-definitions";
 
-class PolygonGraph {
+export class PolygonGraph {
   polygons: Polygon[];
   scale: (y: number) => number;
   y: number;
@@ -149,7 +149,6 @@ class PolygonGraph {
     return this.polygons.length / (this.t1-this.t0)
   }
 }
-export {PolygonGraph}
 
 const defaultColorTransform = (color:string) => {
   let [r,g,b] = Color(color).rgb().array()

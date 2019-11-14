@@ -1,9 +1,9 @@
-import TrackView from "./TrackView";
+import {TrackView} from "./TrackView";
 
 /**
  * Graph for representing a series of instantanteous time points.
  */
-class MarkerGraph {
+export class MarkerGraph {
   points: number[];
   y: number;
   height: number;
@@ -45,4 +45,3 @@ class MarkerGraph {
   }
 }
 
-export default MarkerGraph

@@ -1,10 +1,10 @@
-import TrackView from "./TrackView";
+import {TrackView} from "./TrackView";
 
 const sq = (x: number) => x*x
 
 /** A graph representing a time series at a fixed interval. 
  * Automatically produces larger scale graphs using RMS. */
-class SignalGraph {
+export class SignalGraph {
   data: number[] | Float32Array;
   interval: number;
   scale: (y: number) => any;
@@ -116,4 +116,3 @@ class SignalGraph {
   }
 }
 
-export default SignalGraph

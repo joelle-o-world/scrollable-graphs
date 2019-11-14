@@ -1,6 +1,6 @@
-import SignalGraph from "./SignalGraph";
-import MarkerGraph from "./MarkerGraph";
-import CoordinateGraph from "./CoordinateGraph";
+import {SignalGraph} from "./SignalGraph";
+import {MarkerGraph} from "./MarkerGraph";
+import {CoordinateGraph} from "./CoordinateGraph";
 import { PolygonGraph } from "./PolygonGraph";
 import { Canvas } from "canvas/types";
 
@@ -9,7 +9,7 @@ type Graph = (MarkerGraph | SignalGraph | CoordinateGraph | PolygonGraph)
 /** Class for rendering multiple graphs on a canvas element. 
  * Allowing the user to zoom and pan with the mouse wheel.
  */
-class TrackView {
+export class TrackView {
   canvas: HTMLCanvasElement|Canvas;
   ctx: CanvasRenderingContext2D | null;
   lockedToPlayhead: boolean;
@@ -177,5 +177,3 @@ class TrackView {
       this.t1 = this.tMax
   }
 }
-
-export default TrackView
