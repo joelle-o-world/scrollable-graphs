@@ -2,7 +2,8 @@
   "name": "scrollable-graphs",
   "version": "1.0.0",
   "description": "Create interactive graphs in the browser.",
-  "main": "index.js",
+  "main": "built/index.js",
+  "typings": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,12 @@
   },
   "homepage": "https://github.com/joelyjoel/scrollable-graphs#readme",
   "dependencies": {
+    "@types/color": "^3.0.0",
     "canvas": "^2.6.0",
     "color": "^3.1.2"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.7.2"
   }
 }
