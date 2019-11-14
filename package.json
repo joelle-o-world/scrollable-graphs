@@ -1,6 +1,6 @@
 {
   "name": "scrollable-graphs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create interactive graphs in the browser.",
   "main": "built/index.js",
   "typings": "src/index.ts",
