@@ -2,7 +2,7 @@
   "name": "scrollable-graphs",
   "version": "1.0.6",
   "description": "Create interactive graphs in the browser.",
-  "main": "built/index.ts",
+  "main": "built/index.js",
   "typings": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
