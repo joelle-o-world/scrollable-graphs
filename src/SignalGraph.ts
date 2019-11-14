@@ -5,14 +5,14 @@ const sq = (x: number) => x*x
 /** A graph representing a time series at a fixed interval. 
  * Automatically produces larger scale graphs using RMS. */
 class SignalGraph {
-  data: PCMData;
-  interval: Seconds;
+  data: number[] | Float32Array;
+  interval: number;
   scale: (y: number) => any;
   color: string;
   style: 'line' | 'reflectAndFill';
   _rmsGraph: SignalGraph | null;
   parentGraph: this;
-  constructor(data:PCMData, interval=1) {
+  constructor(data:number[]|Float32Array, interval=1) {
     this.interval = interval
     this.data = data
     this.scale = y => y

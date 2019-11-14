@@ -29,7 +29,7 @@ class TrackView {
     this.canvas = canvas
     //canvas.width = 1000
     //canvas.height = 300
-    this.ctx = canvas.getContext('2d')
+    this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     this.lockedToPlayhead = false
     this.playheadOffset = null
@@ -108,7 +108,7 @@ class TrackView {
       return this.audioctx.currentTime + this.playheadOffset
   }
 
-  play(offset:Seconds) {
+  play(offset:number) {
     if(!this.audiobuffer)
       return null
 
@@ -147,7 +147,7 @@ class TrackView {
       clearInterval(this.cursorInterval)
   }
 
-  scroll(amount:Seconds) {
+  scroll(amount:number) {
     let t0 = this.t0 + amount
     let t1 = this.t1 + amount
     if((this.tMin == null || t0 > this.tMin) && (this.tMax == null || t1 < this.tMax)) {

@@ -1,7 +1,8 @@
 import TrackView from "./TrackView";
 
-import * as Color from 'color'
-import { rgbToHsl, hslToRgb } from "../waveform/colorTransform";
+import * as Color from 'color';
+import { rgbToHsl, hslToRgb } from "./colorTransform";
+import { Polygon } from "./graphical-definitions";
 
 class PolygonGraph {
   polygons: Polygon[];
