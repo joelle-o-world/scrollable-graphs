@@ -1,0 +1,2227 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#scrollable-graphs">scrollable-graphs</a></li>
+<li><a href="#scrollable-graphs-1">scrollable-graphs</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#class-coordinategraph">Class: CoordinateGraph</a><ul>
+<li><a href="#hierarchy">Hierarchy</a></li>
+<li><a href="#index">Index</a></li>
+<li><a href="#constructors">Constructors</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></li>
+<li><a href="#class-interactivetrackview">Class: InteractiveTrackView</a><ul>
+<li><a href="#hierarchy-1">Hierarchy</a></li>
+<li><a href="#index-1">Index</a></li>
+<li><a href="#constructors-1">Constructors</a></li>
+<li><a href="#properties-1">Properties</a></li>
+<li><a href="#accessors">Accessors</a></li>
+<li><a href="#methods-1">Methods</a></li></ul></li>
+<li><a href="#class-markergraph">Class: MarkerGraph</a><ul>
+<li><a href="#hierarchy-2">Hierarchy</a></li>
+<li><a href="#index-2">Index</a></li>
+<li><a href="#constructors-2">Constructors</a></li>
+<li><a href="#properties-2">Properties</a></li>
+<li><a href="#methods-2">Methods</a></li></ul></li>
+<li><a href="#class-polygongraph">Class: PolygonGraph</a><ul>
+<li><a href="#hierarchy-3">Hierarchy</a></li>
+<li><a href="#index-3">Index</a></li>
+<li><a href="#constructors-3">Constructors</a></li>
+<li><a href="#properties-3">Properties</a></li>
+<li><a href="#accessors-1">Accessors</a></li>
+<li><a href="#methods-3">Methods</a></li></ul></li>
+<li><a href="#class-signalgraph">Class: SignalGraph</a><ul>
+<li><a href="#hierarchy-4">Hierarchy</a></li>
+<li><a href="#index-4">Index</a></li>
+<li><a href="#constructors-4">Constructors</a></li>
+<li><a href="#properties-4">Properties</a></li>
+<li><a href="#accessors-2">Accessors</a></li>
+<li><a href="#methods-4">Methods</a></li></ul></li>
+<li><a href="#class-trackview">Class: TrackView</a><ul>
+<li><a href="#hierarchy-5">Hierarchy</a></li>
+<li><a href="#index-5">Index</a></li>
+<li><a href="#constructors-5">Constructors</a></li>
+<li><a href="#properties-5">Properties</a></li>
+<li><a href="#accessors-3">Accessors</a></li>
+<li><a href="#methods-5">Methods</a></li></ul></li>
+<li><a href="#scrollable-graphs-2">scrollable-graphs</a></li>
+<li><a href="#index-6">Index</a><ul>
+<li><a href="#classes-1">Classes</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#type-aliases">Type aliases</a></li>
+<li><a href="#functions">Functions</a></li></ul></li>
+<li><a href="#type-aliases-1">Type aliases</a><ul>
+<li><a href="#coordinate">Coordinate</a></li>
+<li><a href="#graph">Graph</a></li></ul></li>
+<li><a href="#functions-1">Functions</a><ul>
+<li><a href="#const-defaultcolortransform"><code>Const</code> defaultColorTransform</a></li>
+<li><a href="#hsltorgb">hslToRgb</a></li>
+<li><a href="#rgbtohsl">rgbToHsl</a></li>
+<li><a href="#const-sq"><code>Const</code> sq</a></li></ul></li>
+<li><a href="#interfaces-1">Interfaces</a></li>
+<li><a href="#interface-polygon">Interface: Polygon</a><ul>
+<li><a href="#hierarchy-6">Hierarchy</a></li>
+<li><a href="#index-7">Index</a></li>
+<li><a href="#properties-6">Properties</a></li></ul></li>
+<li><a href="#classes-2">Classes</a></li>
+<li><a href="#class-coordinategraph-1">Class: CoordinateGraph</a><ul>
+<li><a href="#hierarchy-7">Hierarchy</a></li>
+<li><a href="#index-8">Index</a></li>
+<li><a href="#constructors-6">Constructors</a></li>
+<li><a href="#properties-7">Properties</a></li>
+<li><a href="#methods-6">Methods</a></li></ul></li>
+<li><a href="#class-interactivetrackview-1">Class: InteractiveTrackView</a><ul>
+<li><a href="#hierarchy-8">Hierarchy</a></li>
+<li><a href="#index-9">Index</a></li>
+<li><a href="#constructors-7">Constructors</a></li>
+<li><a href="#properties-8">Properties</a></li>
+<li><a href="#accessors-4">Accessors</a></li>
+<li><a href="#methods-7">Methods</a></li></ul></li>
+<li><a href="#class-markergraph-1">Class: MarkerGraph</a><ul>
+<li><a href="#hierarchy-9">Hierarchy</a></li>
+<li><a href="#index-10">Index</a></li>
+<li><a href="#constructors-8">Constructors</a></li>
+<li><a href="#properties-9">Properties</a></li>
+<li><a href="#methods-8">Methods</a></li></ul></li>
+<li><a href="#class-polygongraph-1">Class: PolygonGraph</a><ul>
+<li><a href="#hierarchy-10">Hierarchy</a></li>
+<li><a href="#index-11">Index</a></li>
+<li><a href="#constructors-9">Constructors</a></li>
+<li><a href="#properties-10">Properties</a></li>
+<li><a href="#accessors-5">Accessors</a></li>
+<li><a href="#methods-9">Methods</a></li></ul></li>
+<li><a href="#class-signalgraph-1">Class: SignalGraph</a><ul>
+<li><a href="#hierarchy-11">Hierarchy</a></li>
+<li><a href="#index-12">Index</a></li>
+<li><a href="#constructors-10">Constructors</a></li>
+<li><a href="#properties-11">Properties</a></li>
+<li><a href="#accessors-6">Accessors</a></li>
+<li><a href="#methods-10">Methods</a></li></ul></li>
+<li><a href="#class-trackview-1">Class: TrackView</a><ul>
+<li><a href="#hierarchy-12">Hierarchy</a></li>
+<li><a href="#index-13">Index</a></li>
+<li><a href="#constructors-11">Constructors</a></li>
+<li><a href="#properties-12">Properties</a></li>
+<li><a href="#accessors-7">Accessors</a></li>
+<li><a href="#methods-11">Methods</a></li></ul></li>
+<li><a href="#scrollable-graphs-3">scrollable-graphs</a></li>
+<li><a href="#index-14">Index</a><ul>
+<li><a href="#classes-3">Classes</a></li>
+<li><a href="#interfaces-2">Interfaces</a></li>
+<li><a href="#type-aliases-2">Type aliases</a></li>
+<li><a href="#functions-2">Functions</a></li></ul></li>
+<li><a href="#type-aliases-3">Type aliases</a><ul>
+<li><a href="#coordinate-1">Coordinate</a></li>
+<li><a href="#graph-1">Graph</a></li></ul></li>
+<li><a href="#functions-3">Functions</a><ul>
+<li><a href="#const-defaultcolortransform-1"><code>Const</code> defaultColorTransform</a></li>
+<li><a href="#hsltorgb-1">hslToRgb</a></li>
+<li><a href="#rgbtohsl-1">rgbToHsl</a></li>
+<li><a href="#const-sq-1"><code>Const</code> sq</a></li></ul></li>
+<li><a href="#interfaces-3">Interfaces</a></li>
+<li><a href="#interface-polygon-1">Interface: Polygon</a><ul>
+<li><a href="#hierarchy-13">Hierarchy</a></li>
+<li><a href="#index-15">Index</a></li>
+<li><a href="#properties-13">Properties</a></li></ul></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<p><a name="readmemd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a></p>
+<h1 id="scrollablegraphs">scrollable-graphs</h1>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#scrollable-graphs">scrollable-graphs</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#class-coordinategraph">Class: CoordinateGraph</a><ul>
+<li><a href="#hierarchy">Hierarchy</a></li>
+<li><a href="#index">Index</a></li>
+<li><a href="#constructors">Constructors</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></li>
+<li><a href="#class-interactivetrackview">Class: InteractiveTrackView</a><ul>
+<li><a href="#hierarchy-1">Hierarchy</a></li>
+<li><a href="#index-1">Index</a></li>
+<li><a href="#constructors-1">Constructors</a></li>
+<li><a href="#properties-1">Properties</a></li>
+<li><a href="#accessors">Accessors</a></li>
+<li><a href="#methods-1">Methods</a></li></ul></li>
+<li><a href="#class-markergraph">Class: MarkerGraph</a><ul>
+<li><a href="#hierarchy-2">Hierarchy</a></li>
+<li><a href="#index-2">Index</a></li>
+<li><a href="#constructors-2">Constructors</a></li>
+<li><a href="#properties-2">Properties</a></li>
+<li><a href="#methods-2">Methods</a></li></ul></li>
+<li><a href="#class-polygongraph">Class: PolygonGraph</a><ul>
+<li><a href="#hierarchy-3">Hierarchy</a></li>
+<li><a href="#index-3">Index</a></li>
+<li><a href="#constructors-3">Constructors</a></li>
+<li><a href="#properties-3">Properties</a></li>
+<li><a href="#accessors-1">Accessors</a></li>
+<li><a href="#methods-3">Methods</a></li></ul></li>
+<li><a href="#class-signalgraph">Class: SignalGraph</a><ul>
+<li><a href="#hierarchy-4">Hierarchy</a></li>
+<li><a href="#index-4">Index</a></li>
+<li><a href="#constructors-4">Constructors</a></li>
+<li><a href="#properties-4">Properties</a></li>
+<li><a href="#accessors-2">Accessors</a></li>
+<li><a href="#methods-4">Methods</a></li></ul></li>
+<li><a href="#class-trackview">Class: TrackView</a><ul>
+<li><a href="#hierarchy-5">Hierarchy</a></li>
+<li><a href="#index-5">Index</a></li>
+<li><a href="#constructors-5">Constructors</a></li>
+<li><a href="#properties-5">Properties</a></li>
+<li><a href="#accessors-3">Accessors</a></li>
+<li><a href="#methods-5">Methods</a></li></ul></li>
+<li><a href="#scrollable-graphs-1">scrollable-graphs</a></li>
+<li><a href="#index-6">Index</a><ul>
+<li><a href="#classes-1">Classes</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#type-aliases">Type aliases</a></li>
+<li><a href="#functions">Functions</a></li></ul></li>
+<li><a href="#type-aliases-1">Type aliases</a><ul>
+<li><a href="#coordinate">Coordinate</a></li>
+<li><a href="#graph">Graph</a></li></ul></li>
+<li><a href="#functions-1">Functions</a><ul>
+<li><a href="#const-defaultcolortransform"><code>Const</code> defaultColorTransform</a></li>
+<li><a href="#hsltorgb">hslToRgb</a></li>
+<li><a href="#rgbtohsl">rgbToHsl</a></li>
+<li><a href="#const-sq"><code>Const</code> sq</a></li></ul></li>
+<li><a href="#interfaces-1">Interfaces</a></li>
+<li><a href="#interface-polygon">Interface: Polygon</a><ul>
+<li><a href="#hierarchy-6">Hierarchy</a></li>
+<li><a href="#index-7">Index</a></li>
+<li><a href="#properties-6">Properties</a></li></ul></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<p><a name="readmemd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a></p>
+<h1 id="scrollablegraphs-1">scrollable-graphs</h1>
+<h1 id="classes">Classes</h1>
+<p><a name="classescoordinategraphmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classescoordinategraphmd">CoordinateGraph</a></p>
+<h2 id="classcoordinategraph">Class: CoordinateGraph</h2>
+<p>Graph for representing a series of <time, y-value> pairs.</p>
+<h3 id="hierarchy">Hierarchy</h3>
+<ul>
+<li><strong>CoordinateGraph</strong></li>
+</ul>
+<h3 id="index">Index</h3>
+<h4 id="constructors">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties">Properties</h4>
+<ul>
+<li><a href="#barwidth">barWidth</a></li>
+<li><a href="#color">color</a></li>
+<li><a href="#mode">mode</a></li>
+<li><a href="#points">points</a></li>
+<li><a href="#scale">scale</a></li>
+</ul>
+<h4 id="methods">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+<li><a href="#sortpoints">sortPoints</a></li>
+</ul>
+<h3 id="constructors-1">Constructors</h3>
+<h4 id="constructor-NaN">constructor</h4>
+<p>+ <strong>new CoordinateGraph</strong>(<code>points</code>: <a href="#coordinate">Coordinate</a>[]): <em><a href="#classescoordinategraphmd">CoordinateGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L11">CoordinateGraph.ts:11</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>points</code> | <a href="#coordinate">Coordinate</a>[] |</p>
+<p><strong>Returns:</strong> <em><a href="#classescoordinategraphmd">CoordinateGraph</a></em></p>
+<h3 id="properties-1">Properties</h3>
+<h4 id="barwidth">barWidth</h4>
+<p>• <strong>barWidth</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L9">CoordinateGraph.ts:9</a></em></p>
+<hr />
+<h4 id="color">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L10">CoordinateGraph.ts:10</a></em></p>
+<hr />
+<h4 id="mode">mode</h4>
+<p>• <strong>mode</strong>: <em>"bar"</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L8">CoordinateGraph.ts:8</a></em></p>
+<hr />
+<h4 id="points">points</h4>
+<p>• <strong>points</strong>: <em><a href="#coordinate">Coordinate</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L7">CoordinateGraph.ts:7</a></em></p>
+<hr />
+<h4 id="scale">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L11">CoordinateGraph.ts:11</a></em></p>
+<h5 id="typedeclaration">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<h3 id="methods-1">Methods</h3>
+<h4 id="draw">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L26">CoordinateGraph.ts:26</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="normalisescale">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L61">CoordinateGraph.ts:61</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="sortpoints">sortPoints</h4>
+<p>▸ <strong>sortPoints</strong>(): <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L21">CoordinateGraph.ts:21</a></em></p>
+<p><strong>Returns:</strong> <em>this</em></p>
+<p><a name="classesinteractivetrackviewmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></p>
+<h2 id="classinteractivetrackview">Class: InteractiveTrackView</h2>
+<h3 id="hierarchy-1">Hierarchy</h3>
+<ul>
+<li><p><a href="#classestrackviewmd">TrackView</a></p>
+<p>↳ <strong>InteractiveTrackView</strong></p></li>
+</ul>
+<h3 id="index-1">Index</h3>
+<h4 id="constructors-2">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-2">Properties</h4>
+<ul>
+<li><a href="#audiobuffer">audiobuffer</a></li>
+<li><a href="#audioctx">audioctx</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#ctx">ctx</a></li>
+<li><a href="#cursorinterval">cursorInterval</a></li>
+<li><a href="#cursorvisible">cursorVisible</a></li>
+<li><a href="#graphs">graphs</a></li>
+<li><a href="#lockedtoplayhead">lockedToPlayhead</a></li>
+<li><a href="#playheadoffset">playheadOffset</a></li>
+<li><a href="#playingsource">playingSource</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+<li><a href="#tmax">tMax</a></li>
+<li><a href="#tmin">tMin</a></li>
+<li><a href="#tspanmin">tSpanMin</a></li>
+</ul>
+<h4 id="accessors">Accessors</h4>
+<ul>
+<li><a href="#pixelspersecond">pixelsPerSecond</a></li>
+<li><a href="#tplayhead">tPlayhead</a></li>
+<li><a href="#tspan">tSpan</a></li>
+</ul>
+<h4 id="methods-2">Methods</h4>
+<ul>
+<li><a href="#addgraph">addGraph</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#enforcelimits">enforceLimits</a></li>
+<li><a href="#play">play</a></li>
+<li><a href="#scroll">scroll</a></li>
+<li><a href="#stop">stop</a></li>
+<li><a href="#tatx">tAtX</a></li>
+<li><a href="#xatt">xAtT</a></li>
+<li><a href="#zoom">zoom</a></li>
+</ul>
+<h3 id="constructors-3">Constructors</h3>
+<h4 id="constructor">constructor</h4>
+<p>+ <strong>new InteractiveTrackView</strong>(<code>canvas</code>: HTMLCanvasElement): <em><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></em></p>
+<p><em>Overrides <a href="#classestrackviewmd">TrackView</a>.<a href="#constructor">constructor</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/InteractiveTrackView.ts#L4">InteractiveTrackView.ts:4</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>canvas</code> | HTMLCanvasElement | document.createElement('canvas') |</p>
+<p><strong>Returns:</strong> <em><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></em></p>
+<h3 id="properties-3">Properties</h3>
+<h4 id="audiobuffer">audiobuffer</h4>
+<p>• <strong>audiobuffer</strong>: <em>AudioBuffer</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#audiobuffer">audiobuffer</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L49">TrackView.ts:49</a></em></p>
+<p>The audio sample under analysis</p>
+<hr />
+<h4 id="audioctx">audioctx</h4>
+<p>• <strong>audioctx</strong>: <em>AudioContext</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#audioctx">audioctx</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L46">TrackView.ts:46</a></em></p>
+<p>Web audio context for audio playback.</p>
+<hr />
+<h4 id="canvas">canvas</h4>
+<p>• <strong>canvas</strong>: <em>HTMLCanvasElement</em></p>
+<p><em>Overrides <a href="#classestrackviewmd">TrackView</a>.<a href="#canvas">canvas</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/InteractiveTrackView.ts#L4">InteractiveTrackView.ts:4</a></em></p>
+<hr />
+<h4 id="ctx">ctx</h4>
+<p>• <strong>ctx</strong>: <em>CanvasRenderingContext2D | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#ctx">ctx</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L16">TrackView.ts:16</a></em></p>
+<p>Canvas rendering context</p>
+<hr />
+<h4 id="cursorinterval">cursorInterval</h4>
+<p>• <strong>cursorInterval</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#cursorinterval">cursorInterval</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L52">TrackView.ts:52</a></em></p>
+<p>Timer reference for updating playhead position.</p>
+<hr />
+<h4 id="cursorvisible">cursorVisible</h4>
+<p>• <strong>cursorVisible</strong>: <em>boolean</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#cursorvisible">cursorVisible</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L43">TrackView.ts:43</a></em></p>
+<p>Should the playhead be visible?</p>
+<hr />
+<h4 id="graphs">graphs</h4>
+<p>• <strong>graphs</strong>: <em><a href="#graph">Graph</a>[]</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#graphs">graphs</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L40">TrackView.ts:40</a></em></p>
+<p>The graphs objects that belong to the track view</p>
+<hr />
+<h4 id="lockedtoplayhead">lockedToPlayhead</h4>
+<p>• <strong>lockedToPlayhead</strong>: <em>boolean</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#lockedtoplayhead">lockedToPlayhead</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L19">TrackView.ts:19</a></em></p>
+<p>If true, the graph will automatically scroll with the playhead when audio is playing.</p>
+<hr />
+<h4 id="playheadoffset">playheadOffset</h4>
+<p>• <strong>playheadOffset</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#playheadoffset">playheadOffset</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L22">TrackView.ts:22</a></em></p>
+<hr />
+<h4 id="playingsource">playingSource</h4>
+<p>• <strong>playingSource</strong>: <em>AudioBufferSourceNode</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#playingsource">playingSource</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p>The currently playing buffer source node (if audio is playing)</p>
+<hr />
+<h4 id="t0">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#t0">t0</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L25">TrackView.ts:25</a></em></p>
+<p>Time at left edge of the graph</p>
+<hr />
+<h4 id="t1">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#t1">t1</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L28">TrackView.ts:28</a></em></p>
+<p>Time at right edge of the graph</p>
+<hr />
+<h4 id="tmax">tMax</h4>
+<p>• <strong>tMax</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tmax">tMax</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L34">TrackView.ts:34</a></em></p>
+<p>The maximum time that can be shown on the graph. I.e. when audio ends.</p>
+<hr />
+<h4 id="tmin">tMin</h4>
+<p>• <strong>tMin</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tmin">tMin</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L31">TrackView.ts:31</a></em></p>
+<p>The minimum time that can be shown on the graph.</p>
+<hr />
+<h4 id="tspanmin">tSpanMin</h4>
+<p>• <strong>tSpanMin</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tspanmin">tSpanMin</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L37">TrackView.ts:37</a></em></p>
+<p>Minimum duration that can be displayed at any time. This effectively sets a hard limit on zoom</p>
+<h3 id="accessors-1">Accessors</h3>
+<h4 id="pixelspersecond">pixelsPerSecond</h4>
+<p>• <strong>get pixelsPerSecond</strong>(): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#pixelspersecond">pixelsPerSecond</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L125">TrackView.ts:125</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="tplayhead">tPlayhead</h4>
+<p>• <strong>get tPlayhead</strong>(): <em>null | number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tplayhead">tPlayhead</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L133">TrackView.ts:133</a></em></p>
+<p><strong>Returns:</strong> <em>null | number</em></p>
+<hr />
+<h4 id="tspan">tSpan</h4>
+<p>• <strong>get tSpan</strong>(): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tspan">tSpan</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L129">TrackView.ts:129</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-3">Methods</h3>
+<h4 id="addgraph">addGraph</h4>
+<p>▸ <strong>addGraph</strong>(…<code>graphs</code>: <a href="#graph">Graph</a>[]): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#addgraph">addGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L74">TrackView.ts:74</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>...graphs</code> | <a href="#graph">Graph</a>[] |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-1">draw</h4>
+<p>▸ <strong>draw</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#draw">draw</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L79">TrackView.ts:79</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="enforcelimits">enforceLimits</h4>
+<p>▸ <strong>enforceLimits</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#enforcelimits">enforceLimits</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L204">TrackView.ts:204</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="play">play</h4>
+<p>▸ <strong>play</strong>(<code>offset</code>: number): <em>undefined | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#play">play</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L140">TrackView.ts:140</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>offset</code> | number |</p>
+<p><strong>Returns:</strong> <em>undefined | null</em></p>
+<hr />
+<h4 id="scroll">scroll</h4>
+<p>▸ <strong>scroll</strong>(<code>amount</code>: number): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#scroll">scroll</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L181">TrackView.ts:181</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>amount</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="stop">stop</h4>
+<p>▸ <strong>stop</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#stop">stop</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L173">TrackView.ts:173</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="tatx">tAtX</h4>
+<p>▸ <strong>tAtX</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tatx">tAtX</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L117">TrackView.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="xatt">xAtT</h4>
+<p>▸ <strong>xAtT</strong>(<code>t</code>: number): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#xatt">xAtT</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L121">TrackView.ts:121</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>t</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="zoom">zoom</h4>
+<p>▸ <strong>zoom</strong>(<code>sf</code>: number, <code>o</code>: number): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#zoom">zoom</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L191">TrackView.ts:191</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>sf</code> | number | 1.5 |
+<code>o</code> | number | (this.t0+this.t1)/2 |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<p><a name="classesmarkergraphmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classesmarkergraphmd">MarkerGraph</a></p>
+<h2 id="classmarkergraph">Class: MarkerGraph</h2>
+<p>Graph for representing a series of instantanteous time points.</p>
+<h3 id="hierarchy-2">Hierarchy</h3>
+<ul>
+<li><strong>MarkerGraph</strong></li>
+</ul>
+<h3 id="index-2">Index</h3>
+<h4 id="constructors-4">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-4">Properties</h4>
+<ul>
+<li><a href="#color">color</a></li>
+<li><a href="#height">height</a></li>
+<li><a href="#points">points</a></li>
+<li><a href="#y">y</a></li>
+</ul>
+<h4 id="methods-4">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+</ul>
+<h3 id="constructors-5">Constructors</h3>
+<h4 id="constructor-1">constructor</h4>
+<p>+ <strong>new MarkerGraph</strong>(<code>points</code>: number[]): <em><a href="#classesmarkergraphmd">MarkerGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L10">MarkerGraph.ts:10</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>points</code> | number[] |</p>
+<p><strong>Returns:</strong> <em><a href="#classesmarkergraphmd">MarkerGraph</a></em></p>
+<h3 id="properties-5">Properties</h3>
+<h4 id="color-1">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L10">MarkerGraph.ts:10</a></em></p>
+<hr />
+<h4 id="height">height</h4>
+<p>• <strong>height</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L9">MarkerGraph.ts:9</a></em></p>
+<hr />
+<h4 id="points-1">points</h4>
+<p>• <strong>points</strong>: <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L7">MarkerGraph.ts:7</a></em></p>
+<hr />
+<h4 id="y">y</h4>
+<p>• <strong>y</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L8">MarkerGraph.ts:8</a></em></p>
+<h3 id="methods-5">Methods</h3>
+<h4 id="draw-2">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L18">MarkerGraph.ts:18</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>this</em></p>
+<p><a name="classespolygongraphmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classespolygongraphmd">PolygonGraph</a></p>
+<h2 id="classpolygongraph">Class: PolygonGraph</h2>
+<h3 id="hierarchy-3">Hierarchy</h3>
+<ul>
+<li><strong>PolygonGraph</strong></li>
+</ul>
+<h3 id="index-3">Index</h3>
+<h4 id="constructors-6">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-6">Properties</h4>
+<ul>
+<li><a href="#_height">_height</a></li>
+<li><a href="#heightconstant">heightConstant</a></li>
+<li><a href="#largerscalegraph">largerScaleGraph</a></li>
+<li><a href="#polygons">polygons</a></li>
+<li><a href="#scale">scale</a></li>
+<li><a href="#usenormalisedcolors">useNormalisedColors</a></li>
+<li><a href="#y">y</a></li>
+</ul>
+<h4 id="accessors-2">Accessors</h4>
+<ul>
+<li><a href="#density">density</a></li>
+<li><a href="#height">height</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+</ul>
+<h4 id="methods-6">Methods</h4>
+<ul>
+<li><a href="#addpolygon">addPolygon</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisecolors">normaliseColors</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+</ul>
+<h3 id="constructors-7">Constructors</h3>
+<h4 id="constructor-2">constructor</h4>
+<p>+ <strong>new PolygonGraph</strong>(<code>polygons</code>: <a href="#interfacespolygonmd">Polygon</a>[]): <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L31">PolygonGraph.ts:31</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>polygons</code> | <a href="#interfacespolygonmd">Polygon</a>[] | [] |</p>
+<p><strong>Returns:</strong> <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<h3 id="properties-7">Properties</h3>
+<h4 id="_height">_height</h4>
+<p>• <strong>_height</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L29">PolygonGraph.ts:29</a></em></p>
+<hr />
+<h4 id="heightconstant">heightConstant</h4>
+<p>• <strong>heightConstant</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L30">PolygonGraph.ts:30</a></em></p>
+<hr />
+<h4 id="largerscalegraph">largerScaleGraph</h4>
+<p>• <strong>largerScaleGraph</strong>: <em><a href="#classespolygongraphmd">PolygonGraph</a> | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L28">PolygonGraph.ts:28</a></em></p>
+<hr />
+<h4 id="polygons">polygons</h4>
+<p>• <strong>polygons</strong>: <em><a href="#interfacespolygonmd">Polygon</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L25">PolygonGraph.ts:25</a></em></p>
+<hr />
+<h4 id="scale-1">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L26">PolygonGraph.ts:26</a></em></p>
+<h5 id="typedeclaration-1">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="usenormalisedcolors">useNormalisedColors</h4>
+<p>• <strong>useNormalisedColors</strong>: <em>true | false | undefined</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L31">PolygonGraph.ts:31</a></em></p>
+<hr />
+<h4 id="y-1">y</h4>
+<p>• <strong>y</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L27">PolygonGraph.ts:27</a></em></p>
+<h3 id="accessors-3">Accessors</h3>
+<h4 id="density">density</h4>
+<p>• <strong>get density</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L165">PolygonGraph.ts:165</a></em></p>
+<p>Average polygons per second of audio</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="height-1">height</h4>
+<p>• <strong>get height</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L150">PolygonGraph.ts:150</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<p>• <strong>set height</strong>(<code>h</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L146">PolygonGraph.ts:146</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>h</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="t0-1">t0</h4>
+<p>• <strong>get t0</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L155">PolygonGraph.ts:155</a></em></p>
+<p>Start time of first polygon</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="t1-1">t1</h4>
+<p>• <strong>get t1</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L160">PolygonGraph.ts:160</a></em></p>
+<p>End time of last polygon</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-7">Methods</h3>
+<h4 id="addpolygon">addPolygon</h4>
+<p>▸ <strong>addPolygon</strong>(<code>polygon</code>: <a href="#interfacespolygonmd">Polygon</a>): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L88">PolygonGraph.ts:88</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>polygon</code> | <a href="#interfacespolygonmd">Polygon</a> |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-3">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L43">PolygonGraph.ts:43</a></em></p>
+<p>Draw the graph on the canvas of the given track view.</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<hr />
+<h4 id="normalisecolors">normaliseColors</h4>
+<p>▸ <strong>normaliseColors</strong>(<code>transform</code>: function): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L117">PolygonGraph.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪<code>Default value</code>  <strong>transform</strong>: <em>function</em>= defaultColorTransform</p>
+<p>▸ (<code>color</code>: string): <em>string</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>color</code> | string |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="normalisescale-1">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L93">PolygonGraph.ts:93</a></em></p>
+<p>Normalise the polygon dimensions using a linear scale. Replaces the <code>scale</code> property on the graph.</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<p><a name="classessignalgraphmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classessignalgraphmd">SignalGraph</a></p>
+<h2 id="classsignalgraph">Class: SignalGraph</h2>
+<p>A graph representing a time series at a fixed interval.
+Automatically produces larger scale graphs using RMS.</p>
+<h3 id="hierarchy-4">Hierarchy</h3>
+<ul>
+<li><strong>SignalGraph</strong></li>
+</ul>
+<h3 id="index-4">Index</h3>
+<h4 id="constructors-8">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-8">Properties</h4>
+<ul>
+<li><a href="#_rmsgraph">_rmsGraph</a></li>
+<li><a href="#color">color</a></li>
+<li><a href="#data">data</a></li>
+<li><a href="#interval">interval</a></li>
+<li><a href="#parentgraph">parentGraph</a></li>
+<li><a href="#scale">scale</a></li>
+<li><a href="#style">style</a></li>
+</ul>
+<h4 id="accessors-4">Accessors</h4>
+<ul>
+<li><a href="#rmsgraph">rmsGraph</a></li>
+</ul>
+<h4 id="methods-8">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+</ul>
+<h3 id="constructors-9">Constructors</h3>
+<h4 id="constructor-3">constructor</h4>
+<p>+ <strong>new SignalGraph</strong>(<code>data</code>: number[] | Float32Array, <code>interval</code>: number): <em><a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L14">SignalGraph.ts:14</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>data</code> | number[] &#124; Float32Array | - |
+<code>interval</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em><a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<h3 id="properties-9">Properties</h3>
+<h4 id="_rmsgraph">_rmsGraph</h4>
+<p>• <strong>_rmsGraph</strong>: <em><a href="#classessignalgraphmd">SignalGraph</a> | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L13">SignalGraph.ts:13</a></em></p>
+<hr />
+<h4 id="color-2">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L11">SignalGraph.ts:11</a></em></p>
+<hr />
+<h4 id="data">data</h4>
+<p>• <strong>data</strong>: <em>number[] | Float32Array</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L8">SignalGraph.ts:8</a></em></p>
+<hr />
+<h4 id="interval">interval</h4>
+<p>• <strong>interval</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L9">SignalGraph.ts:9</a></em></p>
+<hr />
+<h4 id="parentgraph">parentGraph</h4>
+<p>• <strong>parentGraph</strong>: <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L14">SignalGraph.ts:14</a></em></p>
+<hr />
+<h4 id="scale-2">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L10">SignalGraph.ts:10</a></em></p>
+<h5 id="typedeclaration-2">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>any</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="style">style</h4>
+<p>• <strong>style</strong>: <em>"line" | "reflectAndFill"</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L12">SignalGraph.ts:12</a></em></p>
+<h3 id="accessors-5">Accessors</h3>
+<h4 id="rmsgraph">rmsGraph</h4>
+<p>• <strong>get rmsGraph</strong>(): <em><a href="#classessignalgraphmd">SignalGraph</a>‹›</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L70">SignalGraph.ts:70</a></em></p>
+<p><strong>Returns:</strong> <em><a href="#classessignalgraphmd">SignalGraph</a>‹›</em></p>
+<h3 id="methods-9">Methods</h3>
+<h4 id="draw-4">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>this | <a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L24">SignalGraph.ts:24</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>this | <a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<hr />
+<h4 id="normalisescale-2">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L97">SignalGraph.ts:97</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>any</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<p><a name="classestrackviewmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#classestrackviewmd">TrackView</a></p>
+<h2 id="classtrackview">Class: TrackView</h2>
+<p>Class for rendering multiple graphs on a canvas element.
+Allowing the user to zoom and pan with the mouse wheel.</p>
+<h3 id="hierarchy-5">Hierarchy</h3>
+<ul>
+<li><p><strong>TrackView</strong></p>
+<p>↳ <a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></p></li>
+</ul>
+<h3 id="index-5">Index</h3>
+<h4 id="constructors-10">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-10">Properties</h4>
+<ul>
+<li><a href="#audiobuffer">audiobuffer</a></li>
+<li><a href="#audioctx">audioctx</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#ctx">ctx</a></li>
+<li><a href="#cursorinterval">cursorInterval</a></li>
+<li><a href="#cursorvisible">cursorVisible</a></li>
+<li><a href="#graphs">graphs</a></li>
+<li><a href="#lockedtoplayhead">lockedToPlayhead</a></li>
+<li><a href="#playheadoffset">playheadOffset</a></li>
+<li><a href="#playingsource">playingSource</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+<li><a href="#tmax">tMax</a></li>
+<li><a href="#tmin">tMin</a></li>
+<li><a href="#tspanmin">tSpanMin</a></li>
+</ul>
+<h4 id="accessors-6">Accessors</h4>
+<ul>
+<li><a href="#pixelspersecond">pixelsPerSecond</a></li>
+<li><a href="#tplayhead">tPlayhead</a></li>
+<li><a href="#tspan">tSpan</a></li>
+</ul>
+<h4 id="methods-10">Methods</h4>
+<ul>
+<li><a href="#addgraph">addGraph</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#enforcelimits">enforceLimits</a></li>
+<li><a href="#play">play</a></li>
+<li><a href="#scroll">scroll</a></li>
+<li><a href="#stop">stop</a></li>
+<li><a href="#tatx">tAtX</a></li>
+<li><a href="#xatt">xAtT</a></li>
+<li><a href="#zoom">zoom</a></li>
+</ul>
+<h3 id="constructors-11">Constructors</h3>
+<h4 id="constructor-4">constructor</h4>
+<p>+ <strong>new TrackView</strong>(<code>canvas</code>: HTMLCanvasElement): <em><a href="#classestrackviewmd">TrackView</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>canvas</code> | HTMLCanvasElement | document.createElement('canvas') |</p>
+<p><strong>Returns:</strong> <em><a href="#classestrackviewmd">TrackView</a></em></p>
+<h3 id="properties-11">Properties</h3>
+<h4 id="audiobuffer-1">audiobuffer</h4>
+<p>• <strong>audiobuffer</strong>: <em>AudioBuffer</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L49">TrackView.ts:49</a></em></p>
+<p>The audio sample under analysis</p>
+<hr />
+<h4 id="audioctx-1">audioctx</h4>
+<p>• <strong>audioctx</strong>: <em>AudioContext</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L46">TrackView.ts:46</a></em></p>
+<p>Web audio context for audio playback.</p>
+<hr />
+<h4 id="canvas-1">canvas</h4>
+<p>• <strong>canvas</strong>: <em>HTMLCanvasElement</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L13">TrackView.ts:13</a></em></p>
+<p>Reference to the DOM canvas element where the graphs will be drawn.</p>
+<hr />
+<h4 id="ctx-1">ctx</h4>
+<p>• <strong>ctx</strong>: <em>CanvasRenderingContext2D | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L16">TrackView.ts:16</a></em></p>
+<p>Canvas rendering context</p>
+<hr />
+<h4 id="cursorinterval-1">cursorInterval</h4>
+<p>• <strong>cursorInterval</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L52">TrackView.ts:52</a></em></p>
+<p>Timer reference for updating playhead position.</p>
+<hr />
+<h4 id="cursorvisible-1">cursorVisible</h4>
+<p>• <strong>cursorVisible</strong>: <em>boolean</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L43">TrackView.ts:43</a></em></p>
+<p>Should the playhead be visible?</p>
+<hr />
+<h4 id="graphs-1">graphs</h4>
+<p>• <strong>graphs</strong>: <em><a href="#graph">Graph</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L40">TrackView.ts:40</a></em></p>
+<p>The graphs objects that belong to the track view</p>
+<hr />
+<h4 id="lockedtoplayhead-1">lockedToPlayhead</h4>
+<p>• <strong>lockedToPlayhead</strong>: <em>boolean</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L19">TrackView.ts:19</a></em></p>
+<p>If true, the graph will automatically scroll with the playhead when audio is playing.</p>
+<hr />
+<h4 id="playheadoffset-1">playheadOffset</h4>
+<p>• <strong>playheadOffset</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L22">TrackView.ts:22</a></em></p>
+<hr />
+<h4 id="playingsource-1">playingSource</h4>
+<p>• <strong>playingSource</strong>: <em>AudioBufferSourceNode</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p>The currently playing buffer source node (if audio is playing)</p>
+<hr />
+<h4 id="t0-2">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L25">TrackView.ts:25</a></em></p>
+<p>Time at left edge of the graph</p>
+<hr />
+<h4 id="t1-2">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L28">TrackView.ts:28</a></em></p>
+<p>Time at right edge of the graph</p>
+<hr />
+<h4 id="tmax-1">tMax</h4>
+<p>• <strong>tMax</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L34">TrackView.ts:34</a></em></p>
+<p>The maximum time that can be shown on the graph. I.e. when audio ends.</p>
+<hr />
+<h4 id="tmin-1">tMin</h4>
+<p>• <strong>tMin</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L31">TrackView.ts:31</a></em></p>
+<p>The minimum time that can be shown on the graph.</p>
+<hr />
+<h4 id="tspanmin-1">tSpanMin</h4>
+<p>• <strong>tSpanMin</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L37">TrackView.ts:37</a></em></p>
+<p>Minimum duration that can be displayed at any time. This effectively sets a hard limit on zoom</p>
+<h3 id="accessors-7">Accessors</h3>
+<h4 id="pixelspersecond-1">pixelsPerSecond</h4>
+<p>• <strong>get pixelsPerSecond</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L125">TrackView.ts:125</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="tplayhead-1">tPlayhead</h4>
+<p>• <strong>get tPlayhead</strong>(): <em>null | number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L133">TrackView.ts:133</a></em></p>
+<p><strong>Returns:</strong> <em>null | number</em></p>
+<hr />
+<h4 id="tspan-1">tSpan</h4>
+<p>• <strong>get tSpan</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L129">TrackView.ts:129</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-11">Methods</h3>
+<h4 id="addgraph-1">addGraph</h4>
+<p>▸ <strong>addGraph</strong>(…<code>graphs</code>: <a href="#graph">Graph</a>[]): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L74">TrackView.ts:74</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>...graphs</code> | <a href="#graph">Graph</a>[] |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-5">draw</h4>
+<p>▸ <strong>draw</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L79">TrackView.ts:79</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="enforcelimits-1">enforceLimits</h4>
+<p>▸ <strong>enforceLimits</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L204">TrackView.ts:204</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="play-1">play</h4>
+<p>▸ <strong>play</strong>(<code>offset</code>: number): <em>undefined | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L140">TrackView.ts:140</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>offset</code> | number |</p>
+<p><strong>Returns:</strong> <em>undefined | null</em></p>
+<hr />
+<h4 id="scroll-1">scroll</h4>
+<p>▸ <strong>scroll</strong>(<code>amount</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L181">TrackView.ts:181</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>amount</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="stop-1">stop</h4>
+<p>▸ <strong>stop</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L173">TrackView.ts:173</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="tatx-1">tAtX</h4>
+<p>▸ <strong>tAtX</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L117">TrackView.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="xatt-1">xAtT</h4>
+<p>▸ <strong>xAtT</strong>(<code>t</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L121">TrackView.ts:121</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>t</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="zoom-1">zoom</h4>
+<p>▸ <strong>zoom</strong>(<code>sf</code>: number, <code>o</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L191">TrackView.ts:191</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>sf</code> | number | 1.5 |
+<code>o</code> | number | (this.t0+this.t1)/2 |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<p><a name="globalsmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a></p>
+<h1 id="scrollablegraphs-2">scrollable-graphs</h1>
+<h2 id="index-6">Index</h2>
+<h3 id="classes-1">Classes</h3>
+<ul>
+<li><a href="#classescoordinategraphmd">CoordinateGraph</a></li>
+<li><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></li>
+<li><a href="#classesmarkergraphmd">MarkerGraph</a></li>
+<li><a href="#classespolygongraphmd">PolygonGraph</a></li>
+<li><a href="#classessignalgraphmd">SignalGraph</a></li>
+<li><a href="#classestrackviewmd">TrackView</a></li>
+</ul>
+<h3 id="interfaces">Interfaces</h3>
+<ul>
+<li><a href="#interfacespolygonmd">Polygon</a></li>
+</ul>
+<h3 id="typealiases">Type aliases</h3>
+<ul>
+<li><a href="#coordinate">Coordinate</a></li>
+<li><a href="#graph">Graph</a></li>
+</ul>
+<h3 id="functions">Functions</h3>
+<ul>
+<li><a href="#const-defaultcolortransform">defaultColorTransform</a></li>
+<li><a href="#hsltorgb">hslToRgb</a></li>
+<li><a href="#rgbtohsl">rgbToHsl</a></li>
+<li><a href="#const-sq">sq</a></li>
+</ul>
+<h2 id="typealiases-1">Type aliases</h2>
+<h3 id="coordinate">Coordinate</h3>
+<p>Ƭ <strong>Coordinate</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L3">CoordinateGraph.ts:3</a></em></p>
+<h4 id="typedeclaration-3">Type declaration:</h4>
+<ul>
+<li><p><strong>x</strong>: <em>number</em></p></li>
+<li><p><strong>y</strong>: <em>number</em></p></li>
+</ul>
+<hr />
+<h3 id="graph">Graph</h3>
+<p>Ƭ <strong>Graph</strong>: <em><a href="#graph">Graph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L6">TrackView.ts:6</a></em></p>
+<h2 id="functions-1">Functions</h2>
+<h3 id="constdefaultcolortransform"><code>Const</code> defaultColorTransform</h3>
+<p>▸ <strong>defaultColorTransform</strong>(<code>color</code>: string): <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L170">PolygonGraph.ts:170</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>color</code> | string |</p>
+<p><strong>Returns:</strong> <em>string</em></p>
+<hr />
+<h3 id="hsltorgb">hslToRgb</h3>
+<p>▸ <strong>hslToRgb</strong>(<code>h</code>: number, <code>s</code>: number, <code>l</code>: number): <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/colorTransform.ts#L12">colorTransform.ts:12</a></em></p>
+<p>Converts an HSL color value to RGB. Conversion formula
+adapted from http://en.wikipedia.org/wiki/HSL<em>color</em>space.
+Assumes h, s, and l are contained in the set [0, 1] and
+returns r, g, and b in the set [0, 255].</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Description |
+------ | ------ | ------ |
+<code>h</code> | number | The hue |
+<code>s</code> | number | The saturation |
+<code>l</code> | number | The lightness |</p>
+<p><strong>Returns:</strong> <em>number[]</em></p>
+<p>The RGB representation</p>
+<hr />
+<h3 id="rgbtohsl">rgbToHsl</h3>
+<p>▸ <strong>rgbToHsl</strong>(<code>r</code>: number, <code>g</code>: number, <code>b</code>: number): <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/colorTransform.ts#L48">colorTransform.ts:48</a></em></p>
+<p>Converts an RGB color value to HSL. Conversion formula
+adapted from http://en.wikipedia.org/wiki/HSL<em>color</em>space.
+Assumes r, g, and b are contained in the set [0, 255] and
+returns h, s, and l in the set [0, 1].</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Description |
+------ | ------ | ------ |
+<code>r</code> | number | The red color value |
+<code>g</code> | number | The green color value |
+<code>b</code> | number | The blue color value |</p>
+<p><strong>Returns:</strong> <em>number[]</em></p>
+<p>The HSL representation</p>
+<hr />
+<h3 id="constsq"><code>Const</code> sq</h3>
+<p>▸ <strong>sq</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L3">SignalGraph.ts:3</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h1 id="interfaces-1">Interfaces</h1>
+<p><a name="interfacespolygonmd"></a></p>
+<p><a href="#globalsmd">scrollable-graphs</a> › <a href="#interfacespolygonmd">Polygon</a></p>
+<h2 id="interfacepolygon">Interface: Polygon</h2>
+<h3 id="hierarchy-6">Hierarchy</h3>
+<ul>
+<li><strong>Polygon</strong></li>
+</ul>
+<h3 id="index-7">Index</h3>
+<h4 id="properties-12">Properties</h4>
+<ul>
+<li><a href="#color">color</a></li>
+<li><a href="#h0">h0</a></li>
+<li><a href="#h1">h1</a></li>
+<li><a href="#optional-normalisedcolor">normalisedColor</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+</ul>
+<h3 id="properties-13">Properties</h3>
+<h4 id="color-3">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L20">PolygonGraph.ts:20</a></em></p>
+<p>Colour of the polygon.</p>
+<hr />
+<h4 id="h0">h0</h4>
+<p>• <strong>h0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L14">PolygonGraph.ts:14</a></em></p>
+<p>Height at the start of the polygon</p>
+<hr />
+<h4 id="h1">h1</h4>
+<p>• <strong>h1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L17">PolygonGraph.ts:17</a></em></p>
+<p>Height at the end of the polygon.</p>
+<hr />
+<h4 id="optionalnormalisedcolor"><code>Optional</code> normalisedColor</h4>
+<p>• <strong>normalisedColor</strong>? : <em>undefined | string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L21">PolygonGraph.ts:21</a></em></p>
+<hr />
+<h4 id="t0-3">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L8">PolygonGraph.ts:8</a></em></p>
+<p>Start time in seconds</p>
+<hr />
+<h4 id="t1-3">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L11">PolygonGraph.ts:11</a></em></p>
+<p>End time in seconds</p>
+<h1 id="classes-2">Classes</h1>
+<p><a name="classescoordinategraphmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classescoordinategraphmd">CoordinateGraph</a></p>
+<h2 id="classcoordinategraph-1">Class: CoordinateGraph</h2>
+<p>Graph for representing a series of <time, y-value> pairs.</p>
+<h3 id="hierarchy-7">Hierarchy</h3>
+<ul>
+<li><strong>CoordinateGraph</strong></li>
+</ul>
+<h3 id="index-8">Index</h3>
+<h4 id="constructors-12">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-14">Properties</h4>
+<ul>
+<li><a href="#barwidth">barWidth</a></li>
+<li><a href="#color">color</a></li>
+<li><a href="#mode">mode</a></li>
+<li><a href="#points">points</a></li>
+<li><a href="#scale">scale</a></li>
+</ul>
+<h4 id="methods-12">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+<li><a href="#sortpoints">sortPoints</a></li>
+</ul>
+<h3 id="constructors-13">Constructors</h3>
+<h4 id="constructor-5">constructor</h4>
+<p>+ <strong>new CoordinateGraph</strong>(<code>points</code>: <a href="#coordinate">Coordinate</a>[]): <em><a href="#classescoordinategraphmd">CoordinateGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L11">CoordinateGraph.ts:11</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>points</code> | <a href="#coordinate">Coordinate</a>[] |</p>
+<p><strong>Returns:</strong> <em><a href="#classescoordinategraphmd">CoordinateGraph</a></em></p>
+<h3 id="properties-15">Properties</h3>
+<h4 id="barwidth-1">barWidth</h4>
+<p>• <strong>barWidth</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L9">CoordinateGraph.ts:9</a></em></p>
+<hr />
+<h4 id="color-4">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L10">CoordinateGraph.ts:10</a></em></p>
+<hr />
+<h4 id="mode-1">mode</h4>
+<p>• <strong>mode</strong>: <em>"bar"</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L8">CoordinateGraph.ts:8</a></em></p>
+<hr />
+<h4 id="points-2">points</h4>
+<p>• <strong>points</strong>: <em><a href="#coordinate">Coordinate</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L7">CoordinateGraph.ts:7</a></em></p>
+<hr />
+<h4 id="scale-3">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L11">CoordinateGraph.ts:11</a></em></p>
+<h5 id="typedeclaration-4">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<h3 id="methods-13">Methods</h3>
+<h4 id="draw-6">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L26">CoordinateGraph.ts:26</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="normalisescale-3">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L61">CoordinateGraph.ts:61</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="sortpoints-1">sortPoints</h4>
+<p>▸ <strong>sortPoints</strong>(): <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L21">CoordinateGraph.ts:21</a></em></p>
+<p><strong>Returns:</strong> <em>this</em></p>
+<p><a name="classesinteractivetrackviewmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></p>
+<h2 id="classinteractivetrackview-1">Class: InteractiveTrackView</h2>
+<h3 id="hierarchy-8">Hierarchy</h3>
+<ul>
+<li><p><a href="#classestrackviewmd">TrackView</a></p>
+<p>↳ <strong>InteractiveTrackView</strong></p></li>
+</ul>
+<h3 id="index-9">Index</h3>
+<h4 id="constructors-14">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-16">Properties</h4>
+<ul>
+<li><a href="#audiobuffer">audiobuffer</a></li>
+<li><a href="#audioctx">audioctx</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#ctx">ctx</a></li>
+<li><a href="#cursorinterval">cursorInterval</a></li>
+<li><a href="#cursorvisible">cursorVisible</a></li>
+<li><a href="#graphs">graphs</a></li>
+<li><a href="#lockedtoplayhead">lockedToPlayhead</a></li>
+<li><a href="#playheadoffset">playheadOffset</a></li>
+<li><a href="#playingsource">playingSource</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+<li><a href="#tmax">tMax</a></li>
+<li><a href="#tmin">tMin</a></li>
+<li><a href="#tspanmin">tSpanMin</a></li>
+</ul>
+<h4 id="accessors-8">Accessors</h4>
+<ul>
+<li><a href="#pixelspersecond">pixelsPerSecond</a></li>
+<li><a href="#tplayhead">tPlayhead</a></li>
+<li><a href="#tspan">tSpan</a></li>
+</ul>
+<h4 id="methods-14">Methods</h4>
+<ul>
+<li><a href="#addgraph">addGraph</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#enforcelimits">enforceLimits</a></li>
+<li><a href="#play">play</a></li>
+<li><a href="#scroll">scroll</a></li>
+<li><a href="#stop">stop</a></li>
+<li><a href="#tatx">tAtX</a></li>
+<li><a href="#xatt">xAtT</a></li>
+<li><a href="#zoom">zoom</a></li>
+</ul>
+<h3 id="constructors-15">Constructors</h3>
+<h4 id="constructor-6">constructor</h4>
+<p>+ <strong>new InteractiveTrackView</strong>(<code>canvas</code>: HTMLCanvasElement): <em><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></em></p>
+<p><em>Overrides <a href="#classestrackviewmd">TrackView</a>.<a href="#constructor">constructor</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/InteractiveTrackView.ts#L4">InteractiveTrackView.ts:4</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>canvas</code> | HTMLCanvasElement | document.createElement('canvas') |</p>
+<p><strong>Returns:</strong> <em><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></em></p>
+<h3 id="properties-17">Properties</h3>
+<h4 id="audiobuffer-2">audiobuffer</h4>
+<p>• <strong>audiobuffer</strong>: <em>AudioBuffer</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#audiobuffer">audiobuffer</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L49">TrackView.ts:49</a></em></p>
+<p>The audio sample under analysis</p>
+<hr />
+<h4 id="audioctx-2">audioctx</h4>
+<p>• <strong>audioctx</strong>: <em>AudioContext</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#audioctx">audioctx</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L46">TrackView.ts:46</a></em></p>
+<p>Web audio context for audio playback.</p>
+<hr />
+<h4 id="canvas-2">canvas</h4>
+<p>• <strong>canvas</strong>: <em>HTMLCanvasElement</em></p>
+<p><em>Overrides <a href="#classestrackviewmd">TrackView</a>.<a href="#canvas">canvas</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/InteractiveTrackView.ts#L4">InteractiveTrackView.ts:4</a></em></p>
+<hr />
+<h4 id="ctx-2">ctx</h4>
+<p>• <strong>ctx</strong>: <em>CanvasRenderingContext2D | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#ctx">ctx</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L16">TrackView.ts:16</a></em></p>
+<p>Canvas rendering context</p>
+<hr />
+<h4 id="cursorinterval-2">cursorInterval</h4>
+<p>• <strong>cursorInterval</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#cursorinterval">cursorInterval</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L52">TrackView.ts:52</a></em></p>
+<p>Timer reference for updating playhead position.</p>
+<hr />
+<h4 id="cursorvisible-2">cursorVisible</h4>
+<p>• <strong>cursorVisible</strong>: <em>boolean</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#cursorvisible">cursorVisible</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L43">TrackView.ts:43</a></em></p>
+<p>Should the playhead be visible?</p>
+<hr />
+<h4 id="graphs-2">graphs</h4>
+<p>• <strong>graphs</strong>: <em><a href="#graph">Graph</a>[]</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#graphs">graphs</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L40">TrackView.ts:40</a></em></p>
+<p>The graphs objects that belong to the track view</p>
+<hr />
+<h4 id="lockedtoplayhead-2">lockedToPlayhead</h4>
+<p>• <strong>lockedToPlayhead</strong>: <em>boolean</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#lockedtoplayhead">lockedToPlayhead</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L19">TrackView.ts:19</a></em></p>
+<p>If true, the graph will automatically scroll with the playhead when audio is playing.</p>
+<hr />
+<h4 id="playheadoffset-2">playheadOffset</h4>
+<p>• <strong>playheadOffset</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#playheadoffset">playheadOffset</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L22">TrackView.ts:22</a></em></p>
+<hr />
+<h4 id="playingsource-2">playingSource</h4>
+<p>• <strong>playingSource</strong>: <em>AudioBufferSourceNode</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#playingsource">playingSource</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p>The currently playing buffer source node (if audio is playing)</p>
+<hr />
+<h4 id="t0-4">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#t0">t0</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L25">TrackView.ts:25</a></em></p>
+<p>Time at left edge of the graph</p>
+<hr />
+<h4 id="t1-4">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#t1">t1</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L28">TrackView.ts:28</a></em></p>
+<p>Time at right edge of the graph</p>
+<hr />
+<h4 id="tmax-2">tMax</h4>
+<p>• <strong>tMax</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tmax">tMax</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L34">TrackView.ts:34</a></em></p>
+<p>The maximum time that can be shown on the graph. I.e. when audio ends.</p>
+<hr />
+<h4 id="tmin-2">tMin</h4>
+<p>• <strong>tMin</strong>: <em>number | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tmin">tMin</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L31">TrackView.ts:31</a></em></p>
+<p>The minimum time that can be shown on the graph.</p>
+<hr />
+<h4 id="tspanmin-2">tSpanMin</h4>
+<p>• <strong>tSpanMin</strong>: <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tspanmin">tSpanMin</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L37">TrackView.ts:37</a></em></p>
+<p>Minimum duration that can be displayed at any time. This effectively sets a hard limit on zoom</p>
+<h3 id="accessors-9">Accessors</h3>
+<h4 id="pixelspersecond-2">pixelsPerSecond</h4>
+<p>• <strong>get pixelsPerSecond</strong>(): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#pixelspersecond">pixelsPerSecond</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L125">TrackView.ts:125</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="tplayhead-2">tPlayhead</h4>
+<p>• <strong>get tPlayhead</strong>(): <em>null | number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tplayhead">tPlayhead</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L133">TrackView.ts:133</a></em></p>
+<p><strong>Returns:</strong> <em>null | number</em></p>
+<hr />
+<h4 id="tspan-2">tSpan</h4>
+<p>• <strong>get tSpan</strong>(): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tspan">tSpan</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L129">TrackView.ts:129</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-15">Methods</h3>
+<h4 id="addgraph-2">addGraph</h4>
+<p>▸ <strong>addGraph</strong>(…<code>graphs</code>: <a href="#graph">Graph</a>[]): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#addgraph">addGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L74">TrackView.ts:74</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>...graphs</code> | <a href="#graph">Graph</a>[] |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-7">draw</h4>
+<p>▸ <strong>draw</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#draw">draw</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L79">TrackView.ts:79</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="enforcelimits-2">enforceLimits</h4>
+<p>▸ <strong>enforceLimits</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#enforcelimits">enforceLimits</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L204">TrackView.ts:204</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="play-2">play</h4>
+<p>▸ <strong>play</strong>(<code>offset</code>: number): <em>undefined | null</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#play">play</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L140">TrackView.ts:140</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>offset</code> | number |</p>
+<p><strong>Returns:</strong> <em>undefined | null</em></p>
+<hr />
+<h4 id="scroll-2">scroll</h4>
+<p>▸ <strong>scroll</strong>(<code>amount</code>: number): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#scroll">scroll</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L181">TrackView.ts:181</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>amount</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="stop-2">stop</h4>
+<p>▸ <strong>stop</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#stop">stop</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L173">TrackView.ts:173</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="tatx-2">tAtX</h4>
+<p>▸ <strong>tAtX</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#tatx">tAtX</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L117">TrackView.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="xatt-2">xAtT</h4>
+<p>▸ <strong>xAtT</strong>(<code>t</code>: number): <em>number</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#xatt">xAtT</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L121">TrackView.ts:121</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>t</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="zoom-2">zoom</h4>
+<p>▸ <strong>zoom</strong>(<code>sf</code>: number, <code>o</code>: number): <em>void</em></p>
+<p><em>Inherited from <a href="#classestrackviewmd">TrackView</a>.<a href="#zoom">zoom</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L191">TrackView.ts:191</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>sf</code> | number | 1.5 |
+<code>o</code> | number | (this.t0+this.t1)/2 |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<p><a name="classesmarkergraphmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classesmarkergraphmd">MarkerGraph</a></p>
+<h2 id="classmarkergraph-1">Class: MarkerGraph</h2>
+<p>Graph for representing a series of instantanteous time points.</p>
+<h3 id="hierarchy-9">Hierarchy</h3>
+<ul>
+<li><strong>MarkerGraph</strong></li>
+</ul>
+<h3 id="index-10">Index</h3>
+<h4 id="constructors-16">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-18">Properties</h4>
+<ul>
+<li><a href="#color">color</a></li>
+<li><a href="#height">height</a></li>
+<li><a href="#points">points</a></li>
+<li><a href="#y">y</a></li>
+</ul>
+<h4 id="methods-16">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+</ul>
+<h3 id="constructors-17">Constructors</h3>
+<h4 id="constructor-7">constructor</h4>
+<p>+ <strong>new MarkerGraph</strong>(<code>points</code>: number[]): <em><a href="#classesmarkergraphmd">MarkerGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L10">MarkerGraph.ts:10</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>points</code> | number[] |</p>
+<p><strong>Returns:</strong> <em><a href="#classesmarkergraphmd">MarkerGraph</a></em></p>
+<h3 id="properties-19">Properties</h3>
+<h4 id="color-5">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L10">MarkerGraph.ts:10</a></em></p>
+<hr />
+<h4 id="height-2">height</h4>
+<p>• <strong>height</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L9">MarkerGraph.ts:9</a></em></p>
+<hr />
+<h4 id="points-3">points</h4>
+<p>• <strong>points</strong>: <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L7">MarkerGraph.ts:7</a></em></p>
+<hr />
+<h4 id="y-2">y</h4>
+<p>• <strong>y</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L8">MarkerGraph.ts:8</a></em></p>
+<h3 id="methods-17">Methods</h3>
+<h4 id="draw-8">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/MarkerGraph.ts#L18">MarkerGraph.ts:18</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>this</em></p>
+<p><a name="classespolygongraphmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classespolygongraphmd">PolygonGraph</a></p>
+<h2 id="classpolygongraph-1">Class: PolygonGraph</h2>
+<h3 id="hierarchy-10">Hierarchy</h3>
+<ul>
+<li><strong>PolygonGraph</strong></li>
+</ul>
+<h3 id="index-11">Index</h3>
+<h4 id="constructors-18">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-20">Properties</h4>
+<ul>
+<li><a href="#_height">_height</a></li>
+<li><a href="#heightconstant">heightConstant</a></li>
+<li><a href="#largerscalegraph">largerScaleGraph</a></li>
+<li><a href="#polygons">polygons</a></li>
+<li><a href="#scale">scale</a></li>
+<li><a href="#usenormalisedcolors">useNormalisedColors</a></li>
+<li><a href="#y">y</a></li>
+</ul>
+<h4 id="accessors-10">Accessors</h4>
+<ul>
+<li><a href="#density">density</a></li>
+<li><a href="#height">height</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+</ul>
+<h4 id="methods-18">Methods</h4>
+<ul>
+<li><a href="#addpolygon">addPolygon</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisecolors">normaliseColors</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+</ul>
+<h3 id="constructors-19">Constructors</h3>
+<h4 id="constructor-8">constructor</h4>
+<p>+ <strong>new PolygonGraph</strong>(<code>polygons</code>: <a href="#interfacespolygonmd">Polygon</a>[]): <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L31">PolygonGraph.ts:31</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>polygons</code> | <a href="#interfacespolygonmd">Polygon</a>[] | [] |</p>
+<p><strong>Returns:</strong> <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<h3 id="properties-21">Properties</h3>
+<h4 id="_height-1">_height</h4>
+<p>• <strong>_height</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L29">PolygonGraph.ts:29</a></em></p>
+<hr />
+<h4 id="heightconstant-1">heightConstant</h4>
+<p>• <strong>heightConstant</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L30">PolygonGraph.ts:30</a></em></p>
+<hr />
+<h4 id="largerscalegraph-1">largerScaleGraph</h4>
+<p>• <strong>largerScaleGraph</strong>: <em><a href="#classespolygongraphmd">PolygonGraph</a> | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L28">PolygonGraph.ts:28</a></em></p>
+<hr />
+<h4 id="polygons-1">polygons</h4>
+<p>• <strong>polygons</strong>: <em><a href="#interfacespolygonmd">Polygon</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L25">PolygonGraph.ts:25</a></em></p>
+<hr />
+<h4 id="scale-4">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L26">PolygonGraph.ts:26</a></em></p>
+<h5 id="typedeclaration-5">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="usenormalisedcolors-1">useNormalisedColors</h4>
+<p>• <strong>useNormalisedColors</strong>: <em>true | false | undefined</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L31">PolygonGraph.ts:31</a></em></p>
+<hr />
+<h4 id="y-3">y</h4>
+<p>• <strong>y</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L27">PolygonGraph.ts:27</a></em></p>
+<h3 id="accessors-11">Accessors</h3>
+<h4 id="density-1">density</h4>
+<p>• <strong>get density</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L165">PolygonGraph.ts:165</a></em></p>
+<p>Average polygons per second of audio</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="height-3">height</h4>
+<p>• <strong>get height</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L150">PolygonGraph.ts:150</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<p>• <strong>set height</strong>(<code>h</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L146">PolygonGraph.ts:146</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>h</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="t0-5">t0</h4>
+<p>• <strong>get t0</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L155">PolygonGraph.ts:155</a></em></p>
+<p>Start time of first polygon</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="t1-5">t1</h4>
+<p>• <strong>get t1</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L160">PolygonGraph.ts:160</a></em></p>
+<p>End time of last polygon</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-19">Methods</h3>
+<h4 id="addpolygon-1">addPolygon</h4>
+<p>▸ <strong>addPolygon</strong>(<code>polygon</code>: <a href="#interfacespolygonmd">Polygon</a>): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L88">PolygonGraph.ts:88</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>polygon</code> | <a href="#interfacespolygonmd">Polygon</a> |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-9">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L43">PolygonGraph.ts:43</a></em></p>
+<p>Draw the graph on the canvas of the given track view.</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em><a href="#classespolygongraphmd">PolygonGraph</a></em></p>
+<hr />
+<h4 id="normalisecolors-1">normaliseColors</h4>
+<p>▸ <strong>normaliseColors</strong>(<code>transform</code>: function): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L117">PolygonGraph.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪<code>Default value</code>  <strong>transform</strong>: <em>function</em>= defaultColorTransform</p>
+<p>▸ (<code>color</code>: string): <em>string</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>color</code> | string |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="normalisescale-4">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L93">PolygonGraph.ts:93</a></em></p>
+<p>Normalise the polygon dimensions using a linear scale. Replaces the <code>scale</code> property on the graph.</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>number</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<p><a name="classessignalgraphmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classessignalgraphmd">SignalGraph</a></p>
+<h2 id="classsignalgraph-1">Class: SignalGraph</h2>
+<p>A graph representing a time series at a fixed interval.
+Automatically produces larger scale graphs using RMS.</p>
+<h3 id="hierarchy-11">Hierarchy</h3>
+<ul>
+<li><strong>SignalGraph</strong></li>
+</ul>
+<h3 id="index-12">Index</h3>
+<h4 id="constructors-20">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-22">Properties</h4>
+<ul>
+<li><a href="#_rmsgraph">_rmsGraph</a></li>
+<li><a href="#color">color</a></li>
+<li><a href="#data">data</a></li>
+<li><a href="#interval">interval</a></li>
+<li><a href="#parentgraph">parentGraph</a></li>
+<li><a href="#scale">scale</a></li>
+<li><a href="#style">style</a></li>
+</ul>
+<h4 id="accessors-12">Accessors</h4>
+<ul>
+<li><a href="#rmsgraph">rmsGraph</a></li>
+</ul>
+<h4 id="methods-20">Methods</h4>
+<ul>
+<li><a href="#draw">draw</a></li>
+<li><a href="#normalisescale">normaliseScale</a></li>
+</ul>
+<h3 id="constructors-21">Constructors</h3>
+<h4 id="constructor-9">constructor</h4>
+<p>+ <strong>new SignalGraph</strong>(<code>data</code>: number[] | Float32Array, <code>interval</code>: number): <em><a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L14">SignalGraph.ts:14</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>data</code> | number[] &#124; Float32Array | - |
+<code>interval</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em><a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<h3 id="properties-23">Properties</h3>
+<h4 id="_rmsgraph-1">_rmsGraph</h4>
+<p>• <strong>_rmsGraph</strong>: <em><a href="#classessignalgraphmd">SignalGraph</a> | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L13">SignalGraph.ts:13</a></em></p>
+<hr />
+<h4 id="color-6">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L11">SignalGraph.ts:11</a></em></p>
+<hr />
+<h4 id="data-1">data</h4>
+<p>• <strong>data</strong>: <em>number[] | Float32Array</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L8">SignalGraph.ts:8</a></em></p>
+<hr />
+<h4 id="interval-1">interval</h4>
+<p>• <strong>interval</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L9">SignalGraph.ts:9</a></em></p>
+<hr />
+<h4 id="parentgraph-1">parentGraph</h4>
+<p>• <strong>parentGraph</strong>: <em>this</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L14">SignalGraph.ts:14</a></em></p>
+<hr />
+<h4 id="scale-5">scale</h4>
+<p>• <strong>scale</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L10">SignalGraph.ts:10</a></em></p>
+<h5 id="typedeclaration-6">Type declaration:</h5>
+<p>▸ (<code>y</code>: number): <em>any</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<hr />
+<h4 id="style-1">style</h4>
+<p>• <strong>style</strong>: <em>"line" | "reflectAndFill"</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L12">SignalGraph.ts:12</a></em></p>
+<h3 id="accessors-13">Accessors</h3>
+<h4 id="rmsgraph-1">rmsGraph</h4>
+<p>• <strong>get rmsGraph</strong>(): <em><a href="#classessignalgraphmd">SignalGraph</a>‹›</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L70">SignalGraph.ts:70</a></em></p>
+<p><strong>Returns:</strong> <em><a href="#classessignalgraphmd">SignalGraph</a>‹›</em></p>
+<h3 id="methods-21">Methods</h3>
+<h4 id="draw-10">draw</h4>
+<p>▸ <strong>draw</strong>(<code>display</code>: <a href="#classestrackviewmd">TrackView</a>): <em>this | <a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L24">SignalGraph.ts:24</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>display</code> | <a href="#classestrackviewmd">TrackView</a> |</p>
+<p><strong>Returns:</strong> <em>this | <a href="#classessignalgraphmd">SignalGraph</a></em></p>
+<hr />
+<h4 id="normalisescale-5">normaliseScale</h4>
+<p>▸ <strong>normaliseScale</strong>(<code>MIN</code>: number, <code>MAX</code>: number): <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L97">SignalGraph.ts:97</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>MIN</code> | number | 0 |
+<code>MAX</code> | number | 1 |</p>
+<p><strong>Returns:</strong> <em>function</em></p>
+<p>▸ (<code>y</code>: number): <em>any</em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>y</code> | number |</p>
+<p><a name="classestrackviewmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#classestrackviewmd">TrackView</a></p>
+<h2 id="classtrackview-1">Class: TrackView</h2>
+<p>Class for rendering multiple graphs on a canvas element.
+Allowing the user to zoom and pan with the mouse wheel.</p>
+<h3 id="hierarchy-12">Hierarchy</h3>
+<ul>
+<li><p><strong>TrackView</strong></p>
+<p>↳ <a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></p></li>
+</ul>
+<h3 id="index-13">Index</h3>
+<h4 id="constructors-22">Constructors</h4>
+<ul>
+<li><a href="#constructor">constructor</a></li>
+</ul>
+<h4 id="properties-24">Properties</h4>
+<ul>
+<li><a href="#audiobuffer">audiobuffer</a></li>
+<li><a href="#audioctx">audioctx</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#ctx">ctx</a></li>
+<li><a href="#cursorinterval">cursorInterval</a></li>
+<li><a href="#cursorvisible">cursorVisible</a></li>
+<li><a href="#graphs">graphs</a></li>
+<li><a href="#lockedtoplayhead">lockedToPlayhead</a></li>
+<li><a href="#playheadoffset">playheadOffset</a></li>
+<li><a href="#playingsource">playingSource</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+<li><a href="#tmax">tMax</a></li>
+<li><a href="#tmin">tMin</a></li>
+<li><a href="#tspanmin">tSpanMin</a></li>
+</ul>
+<h4 id="accessors-14">Accessors</h4>
+<ul>
+<li><a href="#pixelspersecond">pixelsPerSecond</a></li>
+<li><a href="#tplayhead">tPlayhead</a></li>
+<li><a href="#tspan">tSpan</a></li>
+</ul>
+<h4 id="methods-22">Methods</h4>
+<ul>
+<li><a href="#addgraph">addGraph</a></li>
+<li><a href="#draw">draw</a></li>
+<li><a href="#enforcelimits">enforceLimits</a></li>
+<li><a href="#play">play</a></li>
+<li><a href="#scroll">scroll</a></li>
+<li><a href="#stop">stop</a></li>
+<li><a href="#tatx">tAtX</a></li>
+<li><a href="#xatt">xAtT</a></li>
+<li><a href="#zoom">zoom</a></li>
+</ul>
+<h3 id="constructors-23">Constructors</h3>
+<h4 id="constructor-10">constructor</h4>
+<p>+ <strong>new TrackView</strong>(<code>canvas</code>: HTMLCanvasElement): <em><a href="#classestrackviewmd">TrackView</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>canvas</code> | HTMLCanvasElement | document.createElement('canvas') |</p>
+<p><strong>Returns:</strong> <em><a href="#classestrackviewmd">TrackView</a></em></p>
+<h3 id="properties-25">Properties</h3>
+<h4 id="audiobuffer-3">audiobuffer</h4>
+<p>• <strong>audiobuffer</strong>: <em>AudioBuffer</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L49">TrackView.ts:49</a></em></p>
+<p>The audio sample under analysis</p>
+<hr />
+<h4 id="audioctx-3">audioctx</h4>
+<p>• <strong>audioctx</strong>: <em>AudioContext</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L46">TrackView.ts:46</a></em></p>
+<p>Web audio context for audio playback.</p>
+<hr />
+<h4 id="canvas-3">canvas</h4>
+<p>• <strong>canvas</strong>: <em>HTMLCanvasElement</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L13">TrackView.ts:13</a></em></p>
+<p>Reference to the DOM canvas element where the graphs will be drawn.</p>
+<hr />
+<h4 id="ctx-3">ctx</h4>
+<p>• <strong>ctx</strong>: <em>CanvasRenderingContext2D | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L16">TrackView.ts:16</a></em></p>
+<p>Canvas rendering context</p>
+<hr />
+<h4 id="cursorinterval-3">cursorInterval</h4>
+<p>• <strong>cursorInterval</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L52">TrackView.ts:52</a></em></p>
+<p>Timer reference for updating playhead position.</p>
+<hr />
+<h4 id="cursorvisible-3">cursorVisible</h4>
+<p>• <strong>cursorVisible</strong>: <em>boolean</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L43">TrackView.ts:43</a></em></p>
+<p>Should the playhead be visible?</p>
+<hr />
+<h4 id="graphs-3">graphs</h4>
+<p>• <strong>graphs</strong>: <em><a href="#graph">Graph</a>[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L40">TrackView.ts:40</a></em></p>
+<p>The graphs objects that belong to the track view</p>
+<hr />
+<h4 id="lockedtoplayhead-3">lockedToPlayhead</h4>
+<p>• <strong>lockedToPlayhead</strong>: <em>boolean</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L19">TrackView.ts:19</a></em></p>
+<p>If true, the graph will automatically scroll with the playhead when audio is playing.</p>
+<hr />
+<h4 id="playheadoffset-3">playheadOffset</h4>
+<p>• <strong>playheadOffset</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L22">TrackView.ts:22</a></em></p>
+<hr />
+<h4 id="playingsource-3">playingSource</h4>
+<p>• <strong>playingSource</strong>: <em>AudioBufferSourceNode</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L55">TrackView.ts:55</a></em></p>
+<p>The currently playing buffer source node (if audio is playing)</p>
+<hr />
+<h4 id="t0-6">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L25">TrackView.ts:25</a></em></p>
+<p>Time at left edge of the graph</p>
+<hr />
+<h4 id="t1-6">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L28">TrackView.ts:28</a></em></p>
+<p>Time at right edge of the graph</p>
+<hr />
+<h4 id="tmax-3">tMax</h4>
+<p>• <strong>tMax</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L34">TrackView.ts:34</a></em></p>
+<p>The maximum time that can be shown on the graph. I.e. when audio ends.</p>
+<hr />
+<h4 id="tmin-3">tMin</h4>
+<p>• <strong>tMin</strong>: <em>number | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L31">TrackView.ts:31</a></em></p>
+<p>The minimum time that can be shown on the graph.</p>
+<hr />
+<h4 id="tspanmin-3">tSpanMin</h4>
+<p>• <strong>tSpanMin</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L37">TrackView.ts:37</a></em></p>
+<p>Minimum duration that can be displayed at any time. This effectively sets a hard limit on zoom</p>
+<h3 id="accessors-15">Accessors</h3>
+<h4 id="pixelspersecond-3">pixelsPerSecond</h4>
+<p>• <strong>get pixelsPerSecond</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L125">TrackView.ts:125</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="tplayhead-3">tPlayhead</h4>
+<p>• <strong>get tPlayhead</strong>(): <em>null | number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L133">TrackView.ts:133</a></em></p>
+<p><strong>Returns:</strong> <em>null | number</em></p>
+<hr />
+<h4 id="tspan-3">tSpan</h4>
+<p>• <strong>get tSpan</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L129">TrackView.ts:129</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h3 id="methods-23">Methods</h3>
+<h4 id="addgraph-3">addGraph</h4>
+<p>▸ <strong>addGraph</strong>(…<code>graphs</code>: <a href="#graph">Graph</a>[]): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L74">TrackView.ts:74</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>...graphs</code> | <a href="#graph">Graph</a>[] |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="draw-11">draw</h4>
+<p>▸ <strong>draw</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L79">TrackView.ts:79</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="enforcelimits-3">enforceLimits</h4>
+<p>▸ <strong>enforceLimits</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L204">TrackView.ts:204</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="play-3">play</h4>
+<p>▸ <strong>play</strong>(<code>offset</code>: number): <em>undefined | null</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L140">TrackView.ts:140</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>offset</code> | number |</p>
+<p><strong>Returns:</strong> <em>undefined | null</em></p>
+<hr />
+<h4 id="scroll-3">scroll</h4>
+<p>▸ <strong>scroll</strong>(<code>amount</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L181">TrackView.ts:181</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>amount</code> | number |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="stop-3">stop</h4>
+<p>▸ <strong>stop</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L173">TrackView.ts:173</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h4 id="tatx-3">tAtX</h4>
+<p>▸ <strong>tAtX</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L117">TrackView.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="xatt-3">xAtT</h4>
+<p>▸ <strong>xAtT</strong>(<code>t</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L121">TrackView.ts:121</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>t</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h4 id="zoom-3">zoom</h4>
+<p>▸ <strong>zoom</strong>(<code>sf</code>: number, <code>o</code>: number): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L191">TrackView.ts:191</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Default |
+------ | ------ | ------ |
+<code>sf</code> | number | 1.5 |
+<code>o</code> | number | (this.t0+this.t1)/2 |</p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<p><a name="globalsmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a></p>
+<h1 id="scrollablegraphs-3">scrollable-graphs</h1>
+<h2 id="index-14">Index</h2>
+<h3 id="classes-3">Classes</h3>
+<ul>
+<li><a href="#classescoordinategraphmd">CoordinateGraph</a></li>
+<li><a href="#classesinteractivetrackviewmd">InteractiveTrackView</a></li>
+<li><a href="#classesmarkergraphmd">MarkerGraph</a></li>
+<li><a href="#classespolygongraphmd">PolygonGraph</a></li>
+<li><a href="#classessignalgraphmd">SignalGraph</a></li>
+<li><a href="#classestrackviewmd">TrackView</a></li>
+</ul>
+<h3 id="interfaces-2">Interfaces</h3>
+<ul>
+<li><a href="#interfacespolygonmd">Polygon</a></li>
+</ul>
+<h3 id="typealiases-2">Type aliases</h3>
+<ul>
+<li><a href="#coordinate">Coordinate</a></li>
+<li><a href="#graph">Graph</a></li>
+</ul>
+<h3 id="functions-2">Functions</h3>
+<ul>
+<li><a href="#const-defaultcolortransform">defaultColorTransform</a></li>
+<li><a href="#hsltorgb">hslToRgb</a></li>
+<li><a href="#rgbtohsl">rgbToHsl</a></li>
+<li><a href="#const-sq">sq</a></li>
+</ul>
+<h2 id="typealiases-3">Type aliases</h2>
+<h3 id="coordinate-1">Coordinate</h3>
+<p>Ƭ <strong>Coordinate</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/CoordinateGraph.ts#L3">CoordinateGraph.ts:3</a></em></p>
+<h4 id="typedeclaration-7">Type declaration:</h4>
+<ul>
+<li><p><strong>x</strong>: <em>number</em></p></li>
+<li><p><strong>y</strong>: <em>number</em></p></li>
+</ul>
+<hr />
+<h3 id="graph-1">Graph</h3>
+<p>Ƭ <strong>Graph</strong>: <em><a href="#graph">Graph</a></em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/TrackView.ts#L6">TrackView.ts:6</a></em></p>
+<h2 id="functions-3">Functions</h2>
+<h3 id="constdefaultcolortransform-1"><code>Const</code> defaultColorTransform</h3>
+<p>▸ <strong>defaultColorTransform</strong>(<code>color</code>: string): <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L170">PolygonGraph.ts:170</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>color</code> | string |</p>
+<p><strong>Returns:</strong> <em>string</em></p>
+<hr />
+<h3 id="hsltorgb-1">hslToRgb</h3>
+<p>▸ <strong>hslToRgb</strong>(<code>h</code>: number, <code>s</code>: number, <code>l</code>: number): <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/colorTransform.ts#L12">colorTransform.ts:12</a></em></p>
+<p>Converts an HSL color value to RGB. Conversion formula
+adapted from http://en.wikipedia.org/wiki/HSL<em>color</em>space.
+Assumes h, s, and l are contained in the set [0, 1] and
+returns r, g, and b in the set [0, 255].</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Description |
+------ | ------ | ------ |
+<code>h</code> | number | The hue |
+<code>s</code> | number | The saturation |
+<code>l</code> | number | The lightness |</p>
+<p><strong>Returns:</strong> <em>number[]</em></p>
+<p>The RGB representation</p>
+<hr />
+<h3 id="rgbtohsl-1">rgbToHsl</h3>
+<p>▸ <strong>rgbToHsl</strong>(<code>r</code>: number, <code>g</code>: number, <code>b</code>: number): <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/colorTransform.ts#L48">colorTransform.ts:48</a></em></p>
+<p>Converts an RGB color value to HSL. Conversion formula
+adapted from http://en.wikipedia.org/wiki/HSL<em>color</em>space.
+Assumes r, g, and b are contained in the set [0, 255] and
+returns h, s, and l in the set [0, 1].</p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type | Description |
+------ | ------ | ------ |
+<code>r</code> | number | The red color value |
+<code>g</code> | number | The green color value |
+<code>b</code> | number | The blue color value |</p>
+<p><strong>Returns:</strong> <em>number[]</em></p>
+<p>The HSL representation</p>
+<hr />
+<h3 id="constsq-1"><code>Const</code> sq</h3>
+<p>▸ <strong>sq</strong>(<code>x</code>: number): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/SignalGraph.ts#L3">SignalGraph.ts:3</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>Name | Type |
+------ | ------ |
+<code>x</code> | number |</p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<h1 id="interfaces-3">Interfaces</h1>
+<p><a name="interfacespolygonmd"></a></p>
+<p><a href="#readmemd">scrollable-graphs</a> › <a href="#globalsmd">Globals</a> › <a href="#interfacespolygonmd">Polygon</a></p>
+<h2 id="interfacepolygon-1">Interface: Polygon</h2>
+<h3 id="hierarchy-13">Hierarchy</h3>
+<ul>
+<li><strong>Polygon</strong></li>
+</ul>
+<h3 id="index-15">Index</h3>
+<h4 id="properties-26">Properties</h4>
+<ul>
+<li><a href="#color">color</a></li>
+<li><a href="#h0">h0</a></li>
+<li><a href="#h1">h1</a></li>
+<li><a href="#optional-normalisedcolor">normalisedColor</a></li>
+<li><a href="#t0">t0</a></li>
+<li><a href="#t1">t1</a></li>
+</ul>
+<h3 id="properties-27">Properties</h3>
+<h4 id="color-7">color</h4>
+<p>• <strong>color</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L20">PolygonGraph.ts:20</a></em></p>
+<p>Colour of the polygon.</p>
+<hr />
+<h4 id="h0-1">h0</h4>
+<p>• <strong>h0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L14">PolygonGraph.ts:14</a></em></p>
+<p>Height at the start of the polygon</p>
+<hr />
+<h4 id="h1-1">h1</h4>
+<p>• <strong>h1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L17">PolygonGraph.ts:17</a></em></p>
+<p>Height at the end of the polygon.</p>
+<hr />
+<h4 id="optionalnormalisedcolor-1"><code>Optional</code> normalisedColor</h4>
+<p>• <strong>normalisedColor</strong>? : <em>undefined | string</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L21">PolygonGraph.ts:21</a></em></p>
+<hr />
+<h4 id="t0-7">t0</h4>
+<p>• <strong>t0</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L8">PolygonGraph.ts:8</a></em></p>
+<p>Start time in seconds</p>
+<hr />
+<h4 id="t1-7">t1</h4>
+<p>• <strong>t1</strong>: <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/joelyjoel/scrollable-graphs/blob/75a0c7f/src/PolygonGraph.ts#L11">PolygonGraph.ts:11</a></em></p>
+<p>End time in seconds</p>

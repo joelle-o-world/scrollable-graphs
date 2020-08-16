@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "postinstall": "npm run build"
+    "makedocs": "rimraf temp-docs && typedoc --plugin typedoc-plugin-markdown --theme markdown --mode file --out temp-docs && concat-md --toc --decrease-title-levels --dir-name-as-title temp-docs > README.md && showdown makehtml -i README.md -o README.html && rimraf temp-docs"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,15 @@
   "homepage": "https://github.com/joelyjoel/scrollable-graphs#readme",
   "dependencies": {
     "@types/color": "^3.0.0",
-    "canvas": "^2.6.0",
     "color": "^3.1.2"
   },
   "devDependencies": {
+    "concat-md": "^0.3.5",
+    "rimraf": "^3.0.2",
+    "showdown": "^1.9.1",
     "tsc": "^1.20150623.0",
+    "typedoc": "^0.18.0",
+    "typedoc-plugin-markdown": "^2.4.0",
     "typescript": "^3.7.2"
   }
 }

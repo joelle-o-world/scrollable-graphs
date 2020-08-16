@@ -2,7 +2,6 @@ import {SignalGraph} from "./SignalGraph";
 import {MarkerGraph} from "./MarkerGraph";
 import {CoordinateGraph} from "./CoordinateGraph";
 import { PolygonGraph } from "./PolygonGraph";
-import { Canvas } from "canvas/types";
 
 type Graph = (MarkerGraph | SignalGraph | CoordinateGraph | PolygonGraph)
 
@@ -10,25 +9,53 @@ type Graph = (MarkerGraph | SignalGraph | CoordinateGraph | PolygonGraph)
  * Allowing the user to zoom and pan with the mouse wheel.
  */
 class TrackView {
-  canvas: HTMLCanvasElement|Canvas;
+  /** Reference to the DOM canvas element where the graphs will be drawn. */
+  canvas: HTMLCanvasElement;
+
+  /** Canvas rendering context */
   ctx: CanvasRenderingContext2D | null;
+
+  /** If true, the graph will automatically scroll with the playhead when audio is playing.*/
   lockedToPlayhead: boolean;
+
+  /** */
   playheadOffset: number | null;
+
+  /** Time at left edge of the graph */
   t0: number;
+
+  /** Time at right edge of the graph */
   t1: number;
+
+  /** The minimum time that can be shown on the graph. */
   tMin: number | null;
+
+  /** The maximum time that can be shown on the graph. I.e. when audio ends. */
   tMax: number | null;
+
+  /** Minimum duration that can be displayed at any time. This effectively sets a hard limit on zoom */
   tSpanMin: number;
+ 
+  /** The graphs objects that belong to the track view */
   graphs: Graph[];
+
+  /** Should the playhead be visible? */
   cursorVisible: boolean;
-  audioctx: any;
-  audiobuffer: any;
-  cursorInterval: NodeJS.Timeout;
-  playingSource: any;
-  constructor(canvas:HTMLCanvasElement|Canvas=document.createElement('canvas')) {
+
+  /** Web audio context for audio playback. */
+  audioctx: AudioContext;
+
+  /** The audio sample under analysis */
+  audiobuffer: AudioBuffer;
+
+  /** Timer reference for updating playhead position.*/
+  cursorInterval: number;
+
+  /** The currently playing buffer source node (if audio is playing) */
+  playingSource: AudioBufferSourceNode;
+
+  constructor(canvas:HTMLCanvasElement=document.createElement('canvas')) {
     this.canvas = canvas
-    //canvas.width = 1000
-    //canvas.height = 300
     this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     this.lockedToPlayhead = false
@@ -55,6 +82,8 @@ class TrackView {
     let t = this.tPlayhead
 
     if(this.lockedToPlayhead) {
+      if(t === null)
+        throw "tPlayhead is null";
       let span = this.tSpan
       let t1 = t + 2/3 * span
       if(this.tMax && t1 < this.tMax) {
@@ -119,6 +148,8 @@ class TrackView {
 
     this.lockedToPlayhead = true
     this.cursorInterval = setInterval(() => {
+      if(this.playheadOffset === null)
+        throw "playheadOffset is null";
       let t = this.audioctx.currentTime + this.playheadOffset
       let x = this.xAtT(t)
       if(

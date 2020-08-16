@@ -24,7 +24,7 @@ class CoordinateGraph {
   }
 
   draw(display: TrackView) {
-    let i0 = this.points.findIndex(p => p.x >= display.t0)
+    let i0 = this.points.findIndex((p:Coordinate) => p.x >= display.t0)
     if(i0 == -1)
       return
     if(i0 > 0)
