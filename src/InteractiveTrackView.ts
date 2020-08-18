@@ -29,7 +29,7 @@ class InteractiveTrackView extends TrackView {
       let mouseX = e.clientX-rect.left;
       let offset = this.tAtX(mouseX)
 
-      this.play(offset)
+      this.play(offset);
     })
   }
 }
