@@ -5,10 +5,26 @@ import { PolygonGraph } from "./PolygonGraph";
 
 type Graph = (MarkerGraph | SignalGraph | CoordinateGraph | PolygonGraph)
 
-/** Class for rendering multiple graphs on a canvas element. 
- * Allowing the user to zoom and pan with the mouse wheel.
+/** 
+ * The `TrackView` class coordinates multiple layers of information that share the same time axis. It renders a certian time-windowed section of these graphs onto a canvas element.
+ *
+ * E.g./
+ * ```
+ * // Create a new track view using an existing canvas element.
+ * let canvas = document.getElementById('mycanvas');
+ * let view = new TrackView(canvas);
+ *
+ * // Add graphs to view
+ * view.addGraph(
+ *      new SignalGraph([1,2,3,4,1], 2),
+ *      new SignalGraph([5,6,7], 1.5),
+ * );
+ *
+ * // Render...
+ * view.draw();
+ * ```
  */
-class TrackView {
+export class TrackView {
   /** Reference to the DOM canvas element where the graphs will be drawn. */
   canvas: HTMLCanvasElement;
 
@@ -18,13 +34,14 @@ class TrackView {
   /** If true, the graph will automatically scroll with the playhead when audio is playing.*/
   lockedToPlayhead: boolean;
 
-  /** */
+  /** 
+   * @ignore */
   playheadOffset: number | null;
 
-  /** Time at left edge of the graph */
+  /** Time at left-most edge of the time-window. */
   t0: number;
 
-  /** Time at right edge of the graph */
+  /** Time at right-most edge of the time-window. */
   t1: number;
 
   /** The minimum time that can be shown on the graph. */
@@ -45,15 +62,22 @@ class TrackView {
   /** Web audio context for audio playback. */
   audioctx: AudioContext;
 
-  /** The audio sample under analysis */
+  /** The audio sample under analysis. */
   audiobuffer: AudioBuffer;
 
-  /** Timer reference for updating playhead position.*/
+  /** 
+   * Timer reference for updating playhead position.
+   * @internal
+   */
   cursorInterval: number;
 
-  /** The currently playing buffer source node (if audio is playing) */
+  /** 
+   * The currently playing buffer source node (if audio is playing). 
+   * @internal 
+   * */
   playingSource: AudioBufferSourceNode;
 
+  /** Create a new `TrackView` with the given canvas element. If no canvas argument provided a new one will be created. */
   constructor(canvas:HTMLCanvasElement=document.createElement('canvas')) {
     this.canvas = canvas
     this.ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
@@ -71,11 +95,12 @@ class TrackView {
     this.graphs = []
   }
 
+  /** Add one or more graphs to the TrackView. */
   addGraph(...graphs:Graph[]) {
       this.graphs.push(...graphs)
-      //this.draw()
   }
 
+  /** Render the track view, and all its graphs, to the canvas. */
   draw() {
     if(!this.ctx)
       throw 'Unable to draw because canvas context is undefined'
@@ -114,22 +139,31 @@ class TrackView {
     }
   }
 
+  /** Get the time represented at a specific x-position on the graph */
   tAtX(x:number) {
     return this.t0 + (x/this.canvas.width) * (this.t1-this.t0)
   }
 
+  /** Get the x-position of a given time on the graph. */
   xAtT(t:number) {
     return (t-this.t0)/(this.t1 - this.t0) * this.canvas.width
   }
 
+  /** Time resolution. Number of pixels representing each second of audio on the x-axis */
   get pixelsPerSecond() {
     return this.canvas.width / this.tSpan
   }
 
+  /** 
+   * The duration of the time window represented by the graph. (right edge - left edge. `t1-t0`)
+   */
   get tSpan() {
     return this.t1-this.t0
   }
 
+  /**
+   * The current time of the playhead / audio playback.
+   */
   get tPlayhead() {
     if(this.playheadOffset == null)
       return null
@@ -137,6 +171,10 @@ class TrackView {
       return this.audioctx.currentTime + this.playheadOffset
   }
 
+  /**
+   * Start audio playback.
+   * @param offset Time within the audio file at which to start playback.
+   */
   play(offset:number) {
     if(!this.audiobuffer)
       return null
@@ -170,6 +208,9 @@ class TrackView {
     this.playheadOffset = offset - this.audioctx.currentTime
   }
 
+  /**
+   * Stop audio playback.
+   */
   stop() {
     if(this.playingSource)
       this.playingSource.stop()
@@ -178,6 +219,15 @@ class TrackView {
       clearInterval(this.cursorInterval)
   }
 
+  /**
+   * Track the graph forwards or backwards in time while preserving zoom.
+   * ```
+   * view.scroll(1);    // Move time window 1 second later
+   * view.scroll(-5);   // Move time window 5 seconds earlier
+   * ```
+   *
+   * @param amount How far, in seconds, to move the time window.
+   */
   scroll(amount:number) {
     let t0 = this.t0 + amount
     let t1 = this.t1 + amount
@@ -188,19 +238,34 @@ class TrackView {
     this.enforceLimits()
   }
 
-  zoom(sf=1.5, o=(this.t0+this.t1)/2) {
+  /**
+   * Zoom in or out around a given point in time.
+   * 
+   * eg/
+   * ```
+   * view.zoom(2); // Zoom in by 200%
+   * view.zoom(1/2, 0); // Zoom out by 50% taking t=0 as the anchor point.
+   * ```
+   *
+   * @param scaleFactor Zoom scale factor.
+   * @param anchor Anchor time-point.
+   */
+  zoom(scaleFactor=1.5, anchor=(this.t0+this.t1)/2) {
     if(this.lockedToPlayhead && this.tPlayhead != null)
-      o = this.tPlayhead
+      anchor = this.tPlayhead;
 
-    if(this.tSpanMin != null && this.tSpan/sf < this.tSpanMin) {
-      sf = this.tSpan / this.tSpanMin
-    }
+    if(this.tSpanMin != null && this.tSpan/scaleFactor < this.tSpanMin)
+      scaleFactor = this.tSpan / this.tSpanMin;
+    
 
-    this.t0 = (this.t0-o)/sf + o
-    this.t1 = (this.t1-o)/sf + o
-    this.enforceLimits()
+    this.t0 = (this.t0-anchor)/scaleFactor + anchor;
+    this.t1 = (this.t1-anchor)/scaleFactor + anchor;
+    this.enforceLimits();
   }
 
+  /**
+   * Enforce the restrictions outlined by `tMin` and `tMax`. Corrects `t0` and `t1` if they are outside the bounds.
+   */
   enforceLimits() {
     if(this.tMin != null && this.t0 < this.tMin)
       this.t0 = this.tMin
@@ -208,4 +273,3 @@ class TrackView {
       this.t1 = this.tMax
   }
 }
-export {TrackView}

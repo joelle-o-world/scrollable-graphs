@@ -2,16 +2,59 @@ import {TrackView} from "./TrackView";
 
 const sq = (x: number) => x*x
 
-/** A graph representing a time series at a fixed interval. 
- * Automatically produces larger scale graphs using RMS. */
+/** 
+ * The `SignalGraph` graph class represents a fixed-interval scalar time series (Such as PCM audio). It automatically creates lower resolution versions of itself as required.
+ *
+ * e.g./
+ * ```
+ * // From an AudioBuffer
+ * let sampleInterval = 1 / audiobuffer.sampleRate;
+ * let left = new SignalGraph(audiobuffer.getChannelData(0), sampleInterval);
+ * let right = new SignalGraph(audiobuffer.getChannelData(1), sampleInterval);
+ *
+ * // Apply colour
+ * left.color = '#000000';
+ * right.color = '#ff0000';
+ * 
+ * // Render the results
+ * let view = new TrackView();
+ * view.addGraphs(left, right);
+ * view.draw();
+ * ```
+ */
 class SignalGraph {
+  /** The time series data points. */
   data: number[] | Float32Array;
+
+  /** The time interval between each pair of adjacent points. */
   interval: number;
+
+  /** A scaling function that maps data points to their positions on the y-axis. */
   scale: (y: number) => any;
+
+  /** HTML color-string. What colour should be used for drawing the graph. This property is inherited by lower-resolution versions of the graph.*/
   color: string;
+
+  /** Style of the graph. 
+   *
+   * Set to `"line"` for a simple line graph.
+   * Set to `reflectAndFille` to reflect values over zero to make a filled polygon (a convention for low resolution audio waveforms). 
+   *
+   * This property is inherited by lower resolution versions of the graph.
+   * */
   style: 'line' | 'reflectAndFill';
+
+  /** 
+   * The generated lower resolution version of the graph (if it exists).
+   * @internal
+   */
   _rmsGraph: SignalGraph | null;
-  parentGraph: this;
+
+  /**
+   * The higher resolution graph from which this graph was generated.
+   */
+  parentGraph: SignalGraph;
+
   constructor(data:number[]|Float32Array, interval=1) {
     this.interval = interval
     this.data = data
@@ -21,6 +64,10 @@ class SignalGraph {
     this.style = 'line'
   }
 
+  /** 
+   * Render the graph. Should be called by the `TrackView` class. 
+   * @internal
+   */
   draw(display: TrackView) :this|SignalGraph {
     let nPoints = (display.t1-display.t0)/this.interval
 
@@ -67,6 +114,7 @@ class SignalGraph {
     return this
   }
 
+  /** Generates a lower resolution version of the graph, or fetch it if it already exists. */
   get rmsGraph() {
     if(this._rmsGraph)
       return this._rmsGraph
@@ -94,6 +142,11 @@ class SignalGraph {
     return graph
   }
 
+  /** 
+   * Normalises the scale of the graph to the given range. This is done by creating and assigning a new `scale` function, not by changing the data.
+   * @param MIN The minimum normalised value.
+   * @param MAX The maximum normalised value.
+   */
   normaliseScale(MIN=0, MAX=1) {
     let RANGE = MAX - MIN
 

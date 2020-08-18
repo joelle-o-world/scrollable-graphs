@@ -1,0 +1,7 @@
+{
+  "mode": "file",
+  "out": "docs",
+  "readme": "description.md",
+  "entryPoint": "src/index",
+  "plugin": "none"
+}
