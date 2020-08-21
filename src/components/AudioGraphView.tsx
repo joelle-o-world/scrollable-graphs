@@ -56,7 +56,7 @@ export const AudioGraphView:FunctionComponent<AudioGraphViewProps> = ({tLeft, tR
   }
 
   return <div ref={divRef} onWheel={handleWheel}>
-    <AudioGraphContext.Provider value={{tLeft, tRight}}>
+    <AudioGraphContext.Provider value={{tLeft, tRight, rect}}>
       {children}
     </AudioGraphContext.Provider>
   </div>
