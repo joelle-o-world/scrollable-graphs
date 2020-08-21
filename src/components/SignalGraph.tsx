@@ -4,9 +4,10 @@ import * as React from 'react';
 import {FunctionComponent, useContext, useRef} from 'react';
 import {AudioGraphContext} from '../AudioGraphContext';
 import {SVGPlotContext} from './SVGPlot';
+import {Readable} from 'stream';
 
 export interface SignalGraphProps {
-  data: number[]|Float32Array;
+  data: number[]|Float32Array|Readable;
   interval: number;
   color?: string;
   scale?: (y:number) => any;
@@ -25,10 +26,19 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
   renderStyle = 'line',
   reductionRenderStyle=renderStyle,
 }) => {
-  const reductionCache = useRef([{data, interval}] as ReductionCache);
   const {tLeft, tRight} = useContext(AudioGraphContext);
   const {plotHeight, plotWidth} = useContext(SVGPlotContext);
 
+  const reductionCache = useRef([] as ReductionCache);
+  if(data instanceof Array || data instanceof Float32Array)
+    reductionCache.current.push({data, interval});
+  else if(data instanceof Readable) {
+    reductionCache.current.push({data:[], interval});
+
+    data.on('data', e => {
+      const cache = reductionCache.current;
+    });
+  }
 
   // Choose which resolution to render
   let rData, rInterval, rLevel;

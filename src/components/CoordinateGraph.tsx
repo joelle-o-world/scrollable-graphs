@@ -45,7 +45,7 @@ export const CoordinateGraph:FunctionComponent<CoordinateGraphProps> = ({
         height = {plotHeight * p.y}
         width={barWidth}
         key={i}
-        />)}</g>
+      />)}</g>
 
   else if(points.length && kind == 'line') {
     let p = points.map((p,i) => ({
