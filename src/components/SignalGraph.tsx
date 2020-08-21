@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {FunctionComponent, useContext, useRef} from 'react';
 import {AudioGraphContext} from '../AudioGraphContext';
+import {SVGPlotContext} from './SVGPlot';
 
 export interface SignalGraphProps {
   data: number[]|Float32Array;
@@ -11,7 +12,6 @@ export interface SignalGraphProps {
   scale?: (y:number) => any;
   renderStyle?: 'line' | 'reflectAndFill';
   reductionRenderStyle?: 'line'|'reflectAndFill';
-  resolution?: number;
 }
 
 /** Type used to store multiple resolution buffers of the same data. */
@@ -24,10 +24,10 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
   scale = y=>y,
   renderStyle = 'line',
   reductionRenderStyle=renderStyle,
-  resolution = 1000,
 }) => {
   const reductionCache = useRef([{data, interval}] as ReductionCache);
   const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {plotHeight, plotWidth} = useContext(SVGPlotContext);
 
 
   // Choose which resolution to render
@@ -67,15 +67,15 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
 
   
   
-  let drawing = null;
   if(iRight == iLeft)
-    drawing = null;
-  else if(renderStyle == 'line') {
+    return null
+
+  if(renderStyle == 'line') {
     const points = [];
     for(let i=iLeft; i < iRight; ++i) {
       const t = i * rInterval;
-      const x = resolution * (t-tLeft) / (tRight - tLeft);
-      const y = 64*scale(rData[i]);
+      const x = plotWidth * (t-tLeft) / (tRight - tLeft);
+      const y = plotHeight * scale(rData[i]);
       points.push({x, y});
     }
 
@@ -84,12 +84,9 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
       ...points.slice(1).map(p => `L${p.x} ${p.y}`),
     ].join(' ');
 
-    drawing = <path d={pathString} stroke={color} fill="none" />;
-  }
-
-  return <svg width="100%" height="100px" viewBox={`0 0 ${resolution} 64`}>
-    {drawing}
-  </svg>
+    return <path d={pathString} stroke={color} fill="none" />;
+  } else
+    return null;
 }
 
 const sq = (x:number) => x*x;

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
 import {AudioGraphContext} from '../AudioGraphContext';
+import {SVGPlotContext} from 'components/SVGPlot';
 
 export interface CoordinateGraphProps {
   /** NOTE: Must be sorted by `t` ascending */
   data: {t:number, y:number}[];
   barWidth?: number;
   color?: string;
-  resolution?: number;
   kind?: 'bar' | 'line';
 }
 
@@ -15,11 +15,11 @@ export const CoordinateGraph:FunctionComponent<CoordinateGraphProps> = ({
   data,
   barWidth = 8,
   color = "#000",
-  resolution = 1000,
   kind='bar',
 }) => {
 
   const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {plotWidth, plotHeight} = useContext(SVGPlotContext);
 
   let iLeft = data.length;
   for(let i=0; i < data.length; ++i)
@@ -38,28 +38,27 @@ export const CoordinateGraph:FunctionComponent<CoordinateGraphProps> = ({
   const points = data.slice(iLeft, iRight);
 
 
-  let drawing;
   if(points.length && kind == 'bar')
-      drawing = points.map((p,i) => <rect
-        x = {resolution * (p.t - tLeft) / (tRight - tLeft)}
+      return <g>{points.map((p,i) => <rect
+        x = {plotWidth * (p.t - tLeft) / (tRight - tLeft)}
         y = {0}
-        height = {64 * p.y}
+        height = {plotHeight * p.y}
         width={barWidth}
         key={i}
-      />)
+        />)}</g>
 
   else if(points.length && kind == 'line') {
     let p = points.map((p,i) => ({
-      x: resolution * (p.t - tLeft) / (tRight - tLeft),
+      x: plotWidth * (p.t - tLeft) / (tRight - tLeft),
       y: 64 * p.y,
     }))
     let d = `M${p[0].x} ${p[0].y} ${
       p.slice(1).map(q => `L${q.x} ${q.y}`).join(' ')
     }`;
 
-    drawing = <path d={d} stroke="#000" fill="none" />
-  }
-  return <svg width="100%" height="100px" viewBox={`0 0 ${resolution} 64`}>
-    {drawing}
-  </svg>
+    return <path d={d} stroke="#000" fill="none" />
+
+  } else
+    return null;
+
 }
