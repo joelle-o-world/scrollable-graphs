@@ -1,7 +1,5 @@
-export {hslToRgb, rgbToHsl} from './colorTransform';
-export {CoordinateGraph} from './CoordinateGraph';
-export {InteractiveTrackView} from './InteractiveTrackView';
-export {MarkerGraph} from './MarkerGraph';
-export {PolygonGraph} from './PolygonGraph';
-export {SignalGraph} from './SignalGraph';
-export {TrackView} from './TrackView';
+export {CoordinateGraph} from 'components/CoordinateGraph';
+export {InteractiveAudioGraph} from 'components/InteractiveAudioGraph';
+export {MarkerGraph} from 'components/MarkerGraph';
+export {SignalGraph} from 'components/SignalGraph';
+export {AudioGraphView} from 'components/AudioGraphView';
