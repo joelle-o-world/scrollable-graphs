@@ -1,13 +1,18 @@
 // TODO: Add offset property
 
 import * as React from 'react';
-import {FunctionComponent, useContext, useRef} from 'react';
+import {FunctionComponent, useContext, useRef, useEffect} from 'react';
 import {AudioGraphContext} from '../AudioGraphContext';
 import {SVGPlotContext} from './SVGPlot';
 import {Readable} from 'stream';
+import {ReductionCache} from '../ReductionCache';
+
+function useForceUpdate(): () => void {
+  return React.useReducer(() => ({}), {})[1] as () => void // <- paste here
+}
 
 export interface SignalGraphProps {
-  data: number[]|Float32Array|Readable;
+  data: number[]|Readable;
   interval: number;
   color?: string;
   scale?: (y:number) => any;
@@ -15,8 +20,6 @@ export interface SignalGraphProps {
   reductionRenderStyle?: 'line'|'reflectAndFill';
 }
 
-/** Type used to store multiple resolution buffers of the same data. */
-type ReductionCache = {data:number[]|Float32Array; interval:number;}[];
 
 export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
   data,
@@ -28,39 +31,36 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
 }) => {
   const {tLeft, tRight} = useContext(AudioGraphContext);
   const {plotHeight, plotWidth} = useContext(SVGPlotContext);
+  const forceUpdate = useForceUpdate();
 
-  const reductionCache = useRef([] as ReductionCache);
-  if(data instanceof Array || data instanceof Float32Array)
-    reductionCache.current.push({data, interval});
-  else if(data instanceof Readable) {
-    reductionCache.current.push({data:[], interval});
+  const reductionCache = useRef(new ReductionCache);
+  useEffect(() => {
+    const cache = reductionCache.current;
 
-    data.on('data', e => {
-      const cache = reductionCache.current;
-    });
-  }
+    const handleStreamData = (e:number[]) => {
+      const shouldUpdate = cache.duration > tLeft && cache.duration < tRight;
+      cache.pushData(e);
+      if(shouldUpdate)
+        forceUpdate();
+    };
 
+    cache.interval = interval;
+    if(data instanceof Array) 
+      cache.data = data;
+     else if(data instanceof Readable) 
+      data.on('data', handleStreamData);
+    
+    return () => {
+      if(data instanceof Readable)
+        data.removeListener('data', handleStreamData);;
+    }
+  }, [data]);
+  
   // Choose which resolution to render
-  let rData, rInterval, rLevel;
-  for(let i=0; true; ++i) {
-    let reduced = reductionCache.current[i];
-    let nPoints = (tRight-tLeft) / reduced.interval
-    if(nPoints < 250) {
-      rData = reduced.data;
-      rInterval = reduced.interval;
-      rLevel = i;
-      break;
-    }
-
-    // Otherwise,
-    if(i+1 == reductionCache.current.length) {
-      const redux = 4;
-      reductionCache.current.push({
-        data: rmsReduction(reduced.data, redux),
-        interval: reduced.interval * redux,
-      });
-    }
-  }
+  let win = reductionCache.current.timeWindow(tLeft, tRight, 250);
+  const rData = win.data;
+  const rInterval = win.interval;
+  const rLevel = win.level;
 
 
   let iLeft = Math.floor(tLeft / rInterval);

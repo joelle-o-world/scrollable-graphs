@@ -86,6 +86,22 @@ export class ReductionCache {
       interval /= this.redux;
     }
   }
+
+  get data() {
+    return this._cache[0].data;
+  }
+  set data(data:number[]) {
+    const interval = this.interval;
+    this._cache = [{data, interval}];
+  }
+
+  get length() {
+    return this._cache[0].data.length;
+  }
+
+  get duration() {
+    return this._cache[0].data.length * this._cache[0].interval;
+  }
 }
 
 /** 

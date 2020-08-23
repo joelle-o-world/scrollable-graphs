@@ -19,6 +19,7 @@ window.onload = () => {
   setInterval(() => {
     let noiseChunk = new Array(100).fill(0).map(Math.random);
     exampleStream.write(noiseChunk);
+    console.log('writing data');
   }, 1000);
 
 
