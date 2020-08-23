@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-      "outDir": "./built",
+      "outDir": "./lib",
       "declaration": true,
       "module": "es6",
       "target": "es6",
+      "types": ["react", "node"],
       "noImplicitAny": true,
       "downlevelIteration": true,
       "jsx": "react",
@@ -11,5 +12,6 @@
   },
   "include": [
       "./src/**/*"
-  ]
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

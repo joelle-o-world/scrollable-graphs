@@ -15,7 +15,7 @@ npm install --save scrollable-graphs
 
 To display a graph, the first thing you need is an `AudioGraphView` or an `InteractiveAudioGraph`, and one or more `SVGPlot` components.
 
-```typescript
+```javascript
 import { InteractiveAudioGraph, SVGPlot } from 'scrollable-graphs';
 
 const myGraph = <InteractiveAudioGraph>
@@ -48,7 +48,7 @@ const myGraph = <AudioGraphView tLeft={0} tRight={myAudioBuffer.duration}>
 </AudioGraphView>
 ```
 
-We could add a `<Ruler>` components in a second `<SVGPlot>` to add labels to our time axis.
+We could add a `<Ruler>` component in a second `<SVGPlot>` to add labels to our time axis.
 
 ```javascript
 import { InteractiveAudioGraph, SVGPlot, SignalGraph, Ruler } from 'scrollable-graphs';
