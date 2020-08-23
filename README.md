@@ -29,10 +29,13 @@ The main responsibility of the `AudioGraphView`/`InteractiveAudioGraph` componen
 
 Each `SVGPlot` creates its own `<svg></svg>` image. We can add many layers of information between the `<SVGPlot>` tags to overlay the graphics, or use multiple `<SVGPlot>`s to show the information seperately.
 
-The `SignalGraph` component visualises a array of scalar values evenly spaced accross time, such as PCM audio data (as found in .WAV files and Web Audio API's `AudioBuffer` class. The data is passed to `SignalGraph` using the `data` prop. The `interval` prop controls the time between each pair of consecutive values.
+The `SignalGraph` component visualises a array of scalar values evenly spaced accross time, such as PCM audio data (as found in .WAV files and Web Audio API's `AudioBuffer` class. The data is passed to `SignalGraph` using the `data` prop. The `interval` prop controls the time between each pair of consecutive values. If there is too much information to fit in the image, the `SignalGraph` component will automatically create a lower resolution RMS version of the data.
 
 ```javascript
-const myAudioBuffer
+import { InteractiveAudioGraph, SVGPlot, SignalGraph } from 'scrollable-graphs';
+
+
+const myAudioBuffer; // Some AudioBuffer
 
 let leftChannelData = myAudioBuffer.getChannelData(0);
 let rightChannelData = myAudioBuffer.getChannelData(1);
@@ -45,4 +48,28 @@ const myGraph = <AudioGraphView tLeft={0} tRight={myAudioBuffer.duration}>
 </AudioGraphView>
 ```
 
-The `SignalGraph` components automatically creates lower resolution RMS versions of the data when there is too much information to fit in the view.
+We could add a `<Ruler>` components in a second `<SVGPlot>` to add labels to our time axis.
+
+```javascript
+import { InteractiveAudioGraph, SVGPlot, SignalGraph, Ruler } from 'scrollable-graphs';
+
+
+const myAudioBuffer; // Some AudioBuffer
+
+let leftChannelData = myAudioBuffer.getChannelData(0);
+let rightChannelData = myAudioBuffer.getChannelData(1);
+
+const myGraph = <AudioGraphView tLeft={0} tRight={myAudioBuffer.duration}>
+
+  <SVGPlot>
+    <Ruler />
+  </SVGPlot>
+
+  <SVGPlot>
+    <SignalGraph data={leftChannelData} interval={sampleInterval} color="black" />
+    <SignalGraph data={rightChannelData} interval={sampleInterval} color="ref" />
+  </SVGPlot>
+    
+</AudioGraphView>
+```
+
