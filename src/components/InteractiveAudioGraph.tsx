@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useState} from 'react';
-import {AudioGraphView, AudioGraphWheelEvent} from 'components/AudioGraphView';
+import {AudioGraphView, AudioGraphWheelEvent} from './AudioGraphView';
 
 export interface InteractiveAudioGraphProps {
   tLeft: number;

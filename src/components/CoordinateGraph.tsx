@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
 import {AudioGraphContext} from '../AudioGraphContext';
-import {SVGPlotContext} from 'components/SVGPlot';
+import {SVGPlotContext} from './SVGPlot';
 
 export interface CoordinateGraphProps {
   /** NOTE: Must be sorted by `t` ascending */

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {AudioGraphView} from 'components/AudioGraphView';
-import {InteractiveAudioGraph} from 'components/InteractiveAudioGraph';
-import {MarkerGraph} from 'components/MarkerGraph';
-import {SignalGraph} from 'components/SignalGraph';
-import {CoordinateGraph} from 'components/CoordinateGraph';
-import {SVGPlot} from 'components/SVGPlot';
-import {Ruler} from 'components/Ruler';
+import {AudioGraphView} from './components/AudioGraphView';
+import {InteractiveAudioGraph} from './components/InteractiveAudioGraph';
+import {MarkerGraph} from './components/MarkerGraph';
+import {SignalGraph} from './components/SignalGraph';
+import {CoordinateGraph} from './components/CoordinateGraph';
+import {SVGPlot} from './components/SVGPlot';
+import {Ruler} from './components/Ruler';
 import {PassThrough} from 'stream';
 
 window.onload = () => {
