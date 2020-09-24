@@ -1,13 +1,5 @@
-import * as React from 'react';
 import { FunctionComponent } from 'react';
-export interface AudioGraphWheelEvent {
-    t: number;
-    deltaX: number;
-    deltaT: number;
-    deltaY: number;
-    pxPerSecond: number;
-    event: React.WheelEvent;
-}
+import { TimeAxisWheelEvent } from './TimeAxis';
 export interface PlaybackDetails {
     source: AudioBufferSourceNode;
     offset: number;
@@ -25,7 +17,9 @@ export interface AudioGraphViewProps {
      * Taken together `tLeft` and `tRight` define the time-window of the graph.
      */
     tRight: number;
-    onWheel: (e: AudioGraphWheelEvent) => void;
+    tMin?: number;
+    tMax?: number;
+    onWheel?: (e: TimeAxisWheelEvent) => void;
     onPlay?: (e: {
         source: AudioBufferSourceNode;
         offset: number;
@@ -38,5 +32,6 @@ export interface AudioGraphViewProps {
      * Enables audio controls
      */
     controls?: boolean;
+    interactive?: boolean;
 }
 export declare const AudioGraphView: FunctionComponent<AudioGraphViewProps>;

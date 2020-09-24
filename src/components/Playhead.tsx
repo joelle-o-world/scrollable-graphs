@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
 import styled from 'styled-components';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {TimeAxisContext} from './TimeAxis';
 
 interface PlayheadAttrs {
     x:number;
@@ -24,7 +24,7 @@ export const PlayheadStyle = styled.div.attrs((props:PlayheadAttrs)=> ({
 `
 
 export const Playhead:FunctionComponent<{t:number}> = ({t}) => {
-  const {tLeft, tRight, rect} = useContext(AudioGraphContext);
+  const {tLeft, tRight, rect} = useContext(TimeAxisContext);
   const x = (t - tLeft) / (tRight - tLeft) * (rect.right - rect.left);
   if(x > rect.left && x < rect.right) 
     return <PlayheadStyle className="Playhead" x={x} />

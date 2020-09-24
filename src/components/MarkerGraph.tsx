@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {TimeAxisContext} from './TimeAxis';
 import {SVGPlotContext} from './SVGPlot';
 
 export interface MarkerGraphProps {
@@ -12,7 +12,7 @@ export const MarkerGraph:FunctionComponent<MarkerGraphProps> = ({
   data, 
   color='black',
 }) => {
-  const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {tLeft, tRight} = useContext(TimeAxisContext);
   const {plotHeight, plotWidth} = useContext(SVGPlotContext);
 
 

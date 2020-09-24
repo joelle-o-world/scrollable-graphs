@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useCallback, useRef, useState, useEffect, createContext} from 'react';
+import {AbsoluteFill} from './AbsoluteFill';
 
 export interface TimeAxisProps {
   /** 
@@ -59,6 +60,7 @@ export const TimeAxis:FunctionComponent<TimeAxisProps> = ({
     height:1,
   });
 
+  // Monitoring client rect of the TimeAxis
   useEffect(() => {
     const div = divRef.current;
     if(div) {
@@ -121,9 +123,9 @@ export const TimeAxis:FunctionComponent<TimeAxisProps> = ({
   }, [tLeft, tRight, rect, onWheel]);
 
 
-  return <div className="TimeAxis" ref={divRef} onWheel={handleWheel} onClick={handleClick}>
+  return <AbsoluteFill className="TimeAxis" ref={divRef} onWheel={handleWheel} onClick={handleClick}>
     <TimeAxisContext.Provider value={{tLeft, tRight, rect}}>
       {children}
     </TimeAxisContext.Provider>
-  </div>
+  </AbsoluteFill>
 };

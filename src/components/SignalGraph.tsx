@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import {FunctionComponent, useContext, useRef, useEffect} from 'react';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {TimeAxisContext} from './TimeAxis';
 import {SVGPlotContext} from './SVGPlot';
 import {Readable} from 'stream';
 import {ReductionCache} from '../ReductionCache';
@@ -29,7 +29,7 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
   renderStyle = 'line',
   reductionRenderStyle=renderStyle,
 }) => {
-  const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {tLeft, tRight} = useContext(TimeAxisContext);
   const {plotHeight, plotWidth} = useContext(SVGPlotContext);
   const forceUpdate = useForceUpdate();
 

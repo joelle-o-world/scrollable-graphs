@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {FunctionComponent, useState, useRef, useEffect} from 'react';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {FunctionComponent, useState, useRef, useEffect, useCallback} from 'react';
+import {TimeAxis, TimeAxisClickEvent, TimeAxisWheelEvent} from './TimeAxis';
+import {InteractiveTimeAxis} from './InteractiveTimeAxis';
 import {Playhead} from './Playhead';
 import styled from 'styled-components';
 
@@ -12,15 +13,6 @@ const AudioGraphDiv = styled.div`
   left:0px;
   overflow:hidden;
 `
-
-export interface AudioGraphWheelEvent {
-  t:number;
-  deltaX: number;
-  deltaT: number;
-  deltaY: number;
-  pxPerSecond: number;
-  event: React.WheelEvent;
-}
 
 export interface PlaybackDetails {
   source: AudioBufferSourceNode;
@@ -47,7 +39,10 @@ export interface AudioGraphViewProps {
    */
   tRight: number;
 
-  onWheel: (e:AudioGraphWheelEvent) => void;
+  tMin?:number;
+  tMax?:number;
+
+  onWheel?: (e:TimeAxisWheelEvent) => void;
   onPlay?: (e:{source:AudioBufferSourceNode, offset:number, startTime:number}) => void;
   onPlayheadUpdate?: (e:number) => void;
   onStop?: () => void;
@@ -58,18 +53,21 @@ export interface AudioGraphViewProps {
    * Enables audio controls 
    */
   controls?: boolean;
+
+  interactive?: boolean;
 }
 
 export const AudioGraphView:FunctionComponent<AudioGraphViewProps> = ({
   tLeft, tRight, children, onWheel,
+  tMin, tMax,
   controls=false,
   audio=null,
   onPlay=null,
   onPlayheadUpdate=null,
   onStop=null,
+  interactive=false,
 }) => {
   const divRef = useRef(null as null|HTMLDivElement);
-  const [rect, setRect] = useState({left:0, right:1, top:0, bottom:1, width:1, height:1});
   const [playheadTime, setPlayheadTime] = useState(null as null|number);
   const [startTime, setStartTime] = useState(null as null|number);
   const [playback, setPlayback] = useState(null as null|PlaybackDetails);
@@ -79,57 +77,7 @@ export const AudioGraphView:FunctionComponent<AudioGraphViewProps> = ({
       ctx = new AudioContext();
   }, []);
 
-  useEffect(() => {
-    const div = divRef.current;
-    if(div) {
-      
-      const handleResize = () => {
-        let rect = div.getBoundingClientRect();
-        setRect({
-          top: rect.top,
-          bottom: rect.bottom,
-          left: rect.left,
-          right: rect.right,
-          height: rect.height,
-          width: rect.width,
-        });
-      }
-      handleResize();
-
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      }
-    }
-  }, [divRef.current]);
-
-  useEffect(() => {
-    // @ts-ignore
-    const cancelWheel = (event) => {event.preventDefault()};
-
-    document.body.addEventListener('wheel', cancelWheel, {passive: false});
-
-    return () => {
-        document.body.removeEventListener('wheel', cancelWheel);
-    }
-  }, []); 
-
-  function handleWheel(e:React.WheelEvent) {
-    const x = e.clientX;
-    const t = tLeft + (tRight-tLeft) * (e.clientX - rect.left) / (rect.right - rect.left);
-
-    const pxPerSecond = (rect.right-rect.left) / (tRight - tLeft);
-    const deltaX = e.deltaX;
-    const deltaT = deltaX / pxPerSecond;
-
-    const deltaY = e.deltaY;
-
-    if(onWheel)
-      onWheel({t, pxPerSecond, deltaX, deltaT, deltaY, event:e});
-  }
-
-  
-
+  // Keeping track of playhead
   useEffect(() => {
     if(playback) {
       const interval = setInterval(() => {
@@ -147,9 +95,8 @@ export const AudioGraphView:FunctionComponent<AudioGraphViewProps> = ({
     }
   }, [playback, onPlayheadUpdate]);
 
-  function handleClick(e:React.MouseEvent) {
-    const x = e.clientX;
-    const t = tLeft + (tRight-tLeft) * (e.clientX - rect.left) / (rect.right - rect.left);
+  const handleClick = useCallback((e:TimeAxisClickEvent) => {
+    const t = e.t;
 
     if(controls && audio) {
 
@@ -179,13 +126,16 @@ export const AudioGraphView:FunctionComponent<AudioGraphViewProps> = ({
         };
       }
     }
-  }
+  }, [controls, audio, playback, onPlay, onStop]);
 
-  return <AudioGraphDiv className="AudioGraphView" ref={divRef} onWheel={handleWheel} onClick={handleClick}>
-    <AudioGraphContext.Provider value={{tLeft, tRight, rect}}>
-      {children}
-      
-      {playheadTime ? <Playhead t={playheadTime || 0} /> : null}
-    </AudioGraphContext.Provider>
-  </AudioGraphDiv>
+  if(interactive) {
+    return <InteractiveTimeAxis tLeft={tLeft} tRight={tRight} tMin={tMin} tMax={tMax}>
+        {children}
+        {playheadTime ? <Playhead t={playheadTime || 0} /> : null}
+    </InteractiveTimeAxis>
+  } else
+    return <TimeAxis tLeft={tLeft} tRight={tRight} onWheel={onWheel} onClick={handleClick}>
+        {children}
+        {playheadTime ? <Playhead t={playheadTime || 0} /> : null}
+    </TimeAxis>
 }

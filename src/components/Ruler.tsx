@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {TimeAxisContext} from './TimeAxis';
 import {SVGPlotContext} from './SVGPlot';
 
 export interface RulerProps {
@@ -18,7 +18,7 @@ export const Ruler:FunctionComponent<RulerProps> = ({
   format = formatTime,
   minLabelSpacing = 50,
 }) => {
-  const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {tLeft, tRight} = useContext(TimeAxisContext);
   const {plotWidth, plotHeight} = useContext(SVGPlotContext);
 
 

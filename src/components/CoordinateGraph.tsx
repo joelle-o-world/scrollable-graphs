@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useContext} from 'react';
-import {AudioGraphContext} from '../AudioGraphContext';
+import {TimeAxisContext} from './TimeAxis';
 import {SVGPlotContext} from './SVGPlot';
 
 export interface CoordinateGraphProps {
@@ -18,7 +18,7 @@ export const CoordinateGraph:FunctionComponent<CoordinateGraphProps> = ({
   kind='bar',
 }) => {
 
-  const {tLeft, tRight} = useContext(AudioGraphContext);
+  const {tLeft, tRight} = useContext(TimeAxisContext);
   const {plotWidth, plotHeight} = useContext(SVGPlotContext);
 
   let iLeft = data.length;
