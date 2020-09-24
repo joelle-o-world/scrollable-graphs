@@ -75,8 +75,6 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
   if(iRight >= rData.length)
     iRight = rData.length;
 
-  
-  
   if(iRight == iLeft)
     return null
 
@@ -95,6 +93,34 @@ export const SignalGraph:FunctionComponent<SignalGraphProps> = ({
     ].join(' ');
 
     return <path d={pathString} stroke={color} fill="none" />;
+
+  } else if(renderStyle == 'reflectAndFill') {
+    const topPoints = [];
+    const bottomPoints = [];
+    for(let i=iLeft; i < iRight; ++i) {
+      const t = i * rInterval;
+      const x = plotWidth * (t-tLeft) / (tRight - tLeft);
+      const y = plotHeight * scale(rData[i]);
+      if(isNaN(y))
+        console.log(
+          'y:', y, '\n',
+          'i:', i, '\n',
+          'rData[i]', rData[i], '\n',
+          'plotHeight:', plotHeight, '\n',
+        )
+      topPoints.push({x, y: plotHeight/2 - y/2});
+      bottomPoints.push({x, y: plotHeight/2 + y/2});
+    }
+
+    const points = [...topPoints, ...bottomPoints.reverse()];
+
+    const pathString = [
+      `M${points[0].x} ${points[0].y}`,
+      ...points.slice(1).map(p => `L${p.x} ${p.y}`),
+    ].join(' ');
+
+    return <path d={pathString} stroke="none" fill={color} />
+
   } else
     return null;
 }

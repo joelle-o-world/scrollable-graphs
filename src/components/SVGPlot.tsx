@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {FunctionComponent, createContext} from 'react';
+import {FunctionComponent, createContext, useContext} from 'react';
+import {AudioGraphContext} from '../AudioGraphContext';
 
 export const SVGPlotContext = createContext({
   plotWidth: 1000,
@@ -7,27 +8,31 @@ export const SVGPlotContext = createContext({
 });
 
 export interface SVGPlotProps {
-  height: string;
-  width: string;
-  viewBox: string;
+  height?: number;
+  width?: number;
+  viewBox?: string;
 }
 
 export const SVGPlot:FunctionComponent<SVGPlotProps> = ({
-  height,
-  width,
+  height=null,
+  width=null,
   children,
-  viewBox,
 }) => {
+  const {rect} = useContext(AudioGraphContext);
+  const w:number = width || rect.width;
+  const h:number = height || rect.height;
+  const viewBox = `0 0 ${w} ${h}`;
   
-  const [t, l, w, h] = viewBox.split(' ');
-  if(t != '0' || l != '0')
-    console.log('viewbox must have top=0 and left=0');
-
   return <SVGPlotContext.Provider value={{
-    plotWidth: parseFloat(w), 
-      plotHeight: parseFloat(h), 
+      plotWidth: w, 
+      plotHeight: h, 
   }}>
-    <svg height={height} width={width} viewBox={viewBox}>
+    <svg 
+      className="SVGPlot" 
+      width={`${w}px`} 
+      height={`${h}px`} 
+      viewBox={viewBox}
+    >
       {children}
     </svg>
   </SVGPlotContext.Provider>

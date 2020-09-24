@@ -8,6 +8,11 @@ export interface AudioGraphWheelEvent {
     pxPerSecond: number;
     event: React.WheelEvent;
 }
+export interface PlaybackDetails {
+    source: AudioBufferSourceNode;
+    offset: number;
+    startTime: number;
+}
 /** Props for GraphView component */
 export interface AudioGraphViewProps {
     /**
@@ -21,5 +26,17 @@ export interface AudioGraphViewProps {
      */
     tRight: number;
     onWheel: (e: AudioGraphWheelEvent) => void;
+    onPlay?: (e: {
+        source: AudioBufferSourceNode;
+        offset: number;
+        startTime: number;
+    }) => void;
+    onPlayheadUpdate?: (e: number) => void;
+    onStop?: () => void;
+    audio?: AudioBuffer;
+    /**
+     * Enables audio controls
+     */
+    controls?: boolean;
 }
 export declare const AudioGraphView: FunctionComponent<AudioGraphViewProps>;

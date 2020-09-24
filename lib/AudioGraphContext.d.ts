@@ -7,5 +7,7 @@ export declare const AudioGraphContext: React.Context<{
         right: number;
         top: number;
         bottom: number;
+        width: number;
+        height: number;
     };
 }>;

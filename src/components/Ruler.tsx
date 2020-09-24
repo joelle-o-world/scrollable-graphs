@@ -13,7 +13,7 @@ export interface RulerProps {
 
 export const Ruler:FunctionComponent<RulerProps> = ({
   largestUnit = 60, // 1 minute
-  divisions = [60, 10, 10, 10, 10],
+  divisions = [6, 10, 10, 10, 10, 10],
   minSpacing = 10,
   format = formatTime,
   minLabelSpacing = 50,
@@ -46,7 +46,6 @@ export const Ruler:FunctionComponent<RulerProps> = ({
           markers.push(
             <text 
               x={x} 
-              style={{textAlign:'center'}} 
               y={y+12} 
               key={Math.random()}
             >{label}</text>
@@ -58,7 +57,7 @@ export const Ruler:FunctionComponent<RulerProps> = ({
     unit /= divisions[i];
   }
 
-  return <g>{markers}</g>
+  return <g className="Ruler">{markers}</g>
 };
 
 const formatTime = (t:number) => `${Math.round(t * 1000)/1000}s`;

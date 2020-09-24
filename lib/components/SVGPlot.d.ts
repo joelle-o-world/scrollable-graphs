@@ -5,8 +5,8 @@ export declare const SVGPlotContext: React.Context<{
     plotHeight: number;
 }>;
 export interface SVGPlotProps {
-    height: string;
-    width: string;
-    viewBox: string;
+    height?: number;
+    width?: number;
+    viewBox?: string;
 }
 export declare const SVGPlot: FunctionComponent<SVGPlotProps>;

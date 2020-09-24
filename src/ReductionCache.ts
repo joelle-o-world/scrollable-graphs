@@ -115,7 +115,8 @@ export function rmsReduction(data:number[]|Float32Array, redux:number) {
   for(let i=0; i < data.length; i+=redux) {
     let sqSum = 0;
     for(let j=0; j < redux; ++j)
-      sqSum += sq(data[i+j]) || sqSum / j;
+      sqSum += sq(data[i+j]) || (j ? sqSum / j : 0);
+    
     newData.push(Math.sqrt(sqSum/redux));
   }
   return newData;
